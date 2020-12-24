@@ -1,0 +1,1229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="">
+<head>
+<title>Real Time Clock DS3231 - Arduino, ขาย Arduino, Arduino, Arduino Uno, Raspberry Pi, NodeMCU, Relay, Ultrasound Sensor, DHT11, Relay, Robot, CNC, 3D Printer ราคาถูก ของแถมเพียบ ส่งฟรี EMS : Inspired by LnwShop.com</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="canonical" href="https://www.arduitronics.com/article/35/real-time-clock-ds3231" />
+<meta name="apple-itunes-app" content="app-id=667268963, app-argument=lnwshop://?current_url=https://www.arduitronics.com/article/35/real-time-clock-ds3231">
+<meta name="google-play-app" content="app-id=lnw.lnwshop">
+<meta http-equiv="content-language" content="th" />
+<meta name="viewport" content="width=980">
+<meta name="description" content="การใช้งาน Real Time Clock DS3231" />
+<meta name="keywords" content="Real Time Clock, RTC, DS3231" />
+<meta property="fb:app_id" content="448968218502479" />
+<meta property="og:title" content="Real Time Clock DS3231" />
+<meta property="og:description" content="การใช้งาน Real Time Clock DS3231" />
+<meta property="og:image" content="https://inwfile.com/s-o/7r3b35.jpg" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.arduitronics.com/article/35/real-time-clock-ds3231" />
+<meta name="google-site-verification" content="K6z-BMDcs9WW6cjzq_oEqr2DZhv3iBkOHzn2mN2PTZg" />
+<meta name="norton-safeweb-site-verification" content="jjeg8uxs4lqcclrlk-3ga-l5udy86wsocsrgd-kgii5pq-qwlustu1cd4achopcbjapxe9cy5r9mzy-owaqz2-8hnxfg9qmuos27d7s30k2u5ji2nzw91sdgsnlbac39" />
+<link rel="alternate" hreflang="th" href="https://www.arduitronics.com/article/35/real-time-clock-ds3231" />
+<link rel="image_src" href="https://o.lnwfile.com/_/o/_raw/7r/3b/35.jpg" />
+<link rel="shortcut icon" href="https://o.lnwfile.com/_/o/_raw/nm/yk/xg.jpg" />
+<link rel="icon" href="https://o.lnwfile.com/_/o/_raw/nm/yk/xg.jpg" />
+<link rel="stylesheet" type="text/css" id="lnw-basic-css-file" href="https://www.arduitronics.com/system/application/templates/lnwshop/default/_css/basic.min.css?t=20190607020547" />
+<link rel="stylesheet" type="text/css" href="https://www.arduitronics.com/cache/lnwshop/91/991/css/20190604155542/style.css" />
+<script language="JavaScript" type="text/javascript" src="https://www.arduitronics.com/external/jquery/jquery-1.12.4.min.js"></script>
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://www.arduitronics.com/",
+                "name": "หน้าแรก"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "name": "บทความ",
+                "@id": "https://www.arduitronics.com/article"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "name": "Real Time Clock DS3231",
+                "@id": "https://www.arduitronics.com/article/35/real-time-clock-ds3231"
+            }
+        }
+    ]
+}
+</script><!-- Global site tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42770623-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42770623-1');
+  gtag('config', 'AW-980103276');
+
+</script>
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTT25BP');</script>
+<!-- End Google Tag Manager -->
+	</head>
+<body>
+<!-- 171.96.191.163 -->
+<!-- 122.155.167.45 -->
+<!-- 122.155.167.43 -->
+<!-- d88ce375e0060a3d4f1d.lMbi7n9Mt3KBtFU-8ZYp.8cb93727cbbe5188feb6 - 0.3135 --><style type="text/css">
+	#lbWrapper{
+		height: 40px;
+		background-color: #888a8c;
+	}
+	#lbWrapper-manage .component,
+	#lbWrapper .component{
+		display: none;
+	}
+	#lbUserPanel{
+		display: none;
+	}
+</style>
+<div id="lb" :class="lb_class">
+	<div id="lbWrapper" :class="wrapper_class">
+		<lb-component v-bind="component_props" v-on:hide_user="hide_user" v-on:show_user="show_user" v-on:load_profile_user="load_profile_user"></lb-component>
+	</div>
+	<lb-userpanel v-if="is_login" v-bind="userpanel_props"></lb-userpanel>
+</div>
+<script type="text/x-template" id="lb-component-template">
+	<div class="component">
+	<div id="lbProduct">
+		<div v-if="head.is_bb" class="main-bb" :class="((head.image && head.text)?'':(head.image?'bb-image':'bb-text'))">
+			<a :href="head.url"><img v-if="head.image" class="favicon" :src="head.image" :alt="head.image_alt" :title="head.image_alt" :height="head.height" /><span v-if="head.text" class="txt" v-text="head.text"></span></a>
+		</div>
+		<div v-else class="main" @click="toggle_productPopup">
+			<img v-if="head.image" class="favicon" :src="head.image" :alt="head.image_alt" :title="head.image_alt" :height="head.height" />
+		</div>
+	</div>
+	<div id="lbProductPopup">
+		<div class="lblists">
+			<a v-for="product in product_list" class="lblist" :class="product.key" :product="product.key" :href="product.url" target="_blank" rel="nofollow noopener"><i></i><span v-text="product.desc"></span><b></b><div v-if="product.is_new" class="new_icon"></div></a>
+		</div>
+		<div class="close_lbProductPopup" @click="toggle_productPopup">X ปิดหน้าต่าง</div>
+	</div>
+	<div v-if="is_login" id="lbMember">
+		<a class="lbuser" @click="toggle_user"><img :title="USERDATA.name" :src="USERDATA.avatar" /></a>
+	</div>
+	<div v-else id="lbMember">
+		<a :href="LNWACCOUNTS_LOGIN_URL" rel="nofollow" class="lblogin"><span class="ico"></span><span class="txt">  {{show_lang('เข้าสู่ระบบ')}}</span></a><a :href="LNWACCOUNTS_REGISTER_URL" class="lbregister" rel="nofollow"><span class="ico"></span><span class="txt"> {{show_lang('สมัครสมาชิก')}}</span></a>
+	</div>
+	<div v-if="is_login" id="lbFav" @click="toggle_fav"><span class="ico"></span></div>
+	<div v-if="is_login" id="lbFavPopup">
+		<div v-if="favshops == null" class="lbLoading"></div>
+		<div v-else class="favShopZone">
+			<div class="title">{{show_lang('LB-MY-FAVSHOP')}}</div><div class="number">{{favshops.length}}</div>
+			<a class="all" href="https://www.lnwshop.com/myaccount/favshop">{{show_lang('VIEW_ALL')}}</a>
+			<div v-show="!is_favshop" class="add_fav"><a @click="favshop_add"><div class="addFav_ico"></div><b v-text="show_lang('GADGET-CART-FAV')"></b><br/>{{show_lang('LB-FAV_DETAIL')}}</a></div>
+			<ul class="listShop">
+				<li v-for="shop in favshops" class="shop hoverCircle hoverCircleX3" :class="{nowshop:(shop.shop_id == WEBDATA.id)}">
+					<div class="shopRemove" @click="favshop_remove(shop.shop_id)" v-text="show_lang('BUY-DELETE')"></div>
+					<a :href="shop.url"><div class="shopAvatar"><img :src="shop.avatar" :alt="shop.shopname" /></div>
+					<div class="shopName" v-text="shop.shopname"></div>
+					<div class="shopDesc">#{{shop.shop_id}} <span class="shopStatus" :status="shop.close_status"></span></div></a>
+				</li>
+			</ul>
+			<div v-if="(favshops.length > 8) && (show_favshops_num==8)" class="more" zone="favShopZone" @click="show_favshops_more"><span v-text="show_lang('VIEW_ALL')"></span></div>
+		</div>
+	</div>
+	<div v-if="is_login" id="lbNoti"><div class="noti_name" v-text="USERDATA.name"></div><div class="noti_general" @click="toggle_msg"><div v-if="noti_num>0" class="noti_number" v-text="noti_num"></div></div></div>
+	<div v-if="is_login" id="lbNotiPopup">
+		<div id="notiGeneral" class="popup_general">
+			<div class="title" v-text="show_lang('LB-NOTIFICATION')"></div><a class="all" href="https://www.lnwaccounts.com/manage/notifications">ทั้งหมด</a>
+			<div class="list">
+				<div v-for="nt in notis" class="li hoverCircle hoverCircleX2" :class="nt.className">
+					<a :href="nt.url">
+						<div class="avatar"><img :src="nt.image" :class="nt.image_class" /></div>
+						<div class="icon_info"></div>
+						<div class="noti_info">
+							<span class="info" v-html="nt.message"></span><br>
+							<span class="time" :title="nt.time" v-text="nt.time_diff"></span>
+						</div>
+					</a>
+				</div>
+				<div v-if="notis.length == 0" class="li list-empty" style="text-align: center;">- {{show_lang('LB-NO-NOTIFICATION')}} -</div>
+			</div>
+		</div>
+	</div>
+</div>
+</script>
+<script type="text/x-template" id="lb-userpanel-template">
+	<div id="lbUserPanel">
+		<div class="hhhZone"><div class="backbtn" @click="hide_user">&lsaquo; <span>กลับ</span></div></div>
+		<div class="accountZone"><div class="hoverCircle hoverCircleX3"><a :href="LNWACCOUNTS_MANAGE_URL"><img :src="USERDATA.avatar" :alt="USERDATA.name" /><div class="name" v-text="USERDATA.name"></div><div class="email" v-text="USERDATA.email"></div></a></div></div>
+											<div class="orderZone"><a href="https://www.arduitronics.com/order"><div class="list-item"><div class="hoverCircle hoverCircleX3">รายการสั่งซื้อของฉัน </div></div></a></div>
+							<div class="otherZone">
+			<div class="lnwshopZone">
+				<a href="https://www.lnwshop.com/myaccount/main"><div class="list-item"><div class="hoverCircle hoverCircleX3">My LnwShop</div></div></a>
+				<a href="https://www.lnwshop.com/myaccount/favshop"><div class="list-item"><div class="hoverCircle hoverCircleX3">{{show_lang('LB-MY-FAVSHOP')}}</div></div></a>
+				<a href="https://www.lnwshop.com/myaccount/service"><div class="list-item"><div class="hoverCircle hoverCircleX3">{{show_lang('LB-MY_LNWSHOP_ADDON')}}</div></div></a>
+			</div>
+			<div class="lnwaccountsZone">
+				<a :href="LNWACCOUNTS_MANAGE_URL+'/main/profile'"><div class="list-item"><div class="hoverCircle hoverCircleX3">{{show_lang('LB-PROFILE')}}</div></div></a>
+				<a :href="LNWACCOUNTS_MANAGE_URL+'/main/address'"><div class="list-item"><div class="hoverCircle hoverCircleX3">{{show_lang('RECEIVER_ADDRESS')}}</div></div></a>
+				<a :href="LNWACCOUNTS_MANAGE_URL+'/setting'"><div class="list-item"><div class="hoverCircle hoverCircleX3">{{show_lang('LB-RESET-PSW')}}</div></div></a>
+			</div><div class="clear"></div>
+			<a :href="LNWACCOUNTS_LOGOUT_URL"><div class="logout-item"><div class="hoverCircle hoverCircleX3">{{show_lang('LB-LOGOUT')}} <span>Copyright © 2016-2017 <div class="lnwLogo"></div></span></div></div></a>
+		</div>
+	</div>
+</script>
+
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+			<div id="fb-root"></div> <script> window.fbAsyncInit = function() { FB.init({ appId : '288916771134535', cookie : true, xfbml : true, version : 'v2.8' }); FB.Event.subscribe('comment.create', function(response) { $.lnwajax.run('fb_notify',true,{ type: 'POST', url: 'https' + '://' + 'www.arduitronics.com/article/action/fb_notify/35', data: {}, dataType: 'json', success: function(data){ } }); }); }; (function(d, s, id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk')); </script> 
+
+<div id="ggHead" class="">
+</div>
+
+<div id="gadget-1" config_id="1" class="widgetPage maxwidth-960"><div class="pageWrapper rb-hot-002 rb-new-002 rb-recommend-000 rb-sale-002"><div class="pageShirt">
+
+
+<div id="gadget-2" config_id="2" class="widgetZone z-header"><div class="zoneShirt"><div class="banner" align="center"><a href="https://www.arduitronics.com/"><img class="gadgetImage" src="https://o.lnwfile.com/_/o/_raw/y2/um/y3.jpg" alt="Arduitronics" /></a></div></div></div>
+<div id="gadget-3" config_id="3" class="widgetZone z-nav"><div class="zoneShirt"><ul class="pageNav" role="navigation"><li class="nav-1 nav-main"><a href="https://www.arduitronics.com/" title="ขาย arduino"><div class="text pname_main"><div class="icon i-main"></div>ขาย arduino</div></a></li><li class="nav-2 nav-how2order"><a href="https://www.arduitronics.com/how2order" title="How To Order"><div class="text pname_how2order"><div class="icon i-how2order"></div>How To Order</div></a></li><li class="nav-3 nav-informpayment"><a href="https://www.arduitronics.com/informpayment" title="Payment & Shipping Info"><div class="text pname_informpayment"><div class="icon i-informpayment"></div>Payment & Shipping Info</div></a></li><li class="nav-4 nav-article"><a href="https://www.arduitronics.com/article" title="บทความ arduino"><div class="text pname_article"><div class="icon i-article"></div>บทความ arduino</div></a></li><li class="nav-5 nav-webboard"><a href="https://www.arduitronics.com/webboard" title="เว็บบอร์ด Arduino"><div class="text pname_webboard"><div class="icon i-webboard"></div>เว็บบอร์ด Arduino</div></a></li><li class="nav-6 nav-aboutus"><a href="https://www.arduitronics.com/aboutus" title="About Us"><div class="text pname_aboutus"><div class="icon i-aboutus"></div>About Us</div></a></li><li class="nav-7 nav-contactus"><a href="https://www.arduitronics.com/contactus" title="Contact Us"><div class="text pname_contactus"><div class="icon i-contactus"></div>Contact Us</div></a></li></ul>
+</div></div>
+<div class="pageUnderwear">
+<div id="gadget-4" config_id="4" class="widgetZone z-article"><div class="zoneShirt">
+<div id="gadget-22" config_id="22" class="widgetUnit u-breadcrumb"><div class="unitHat"></div><div class="unitShirt"><ul class="bc_page">
+<li class="page first"><a href="https://www.arduitronics.com/" class="container"><div class="left"></div><div class="center pname_main">หน้าแรก</div><div class="right"></div></a></li><li class="next"><span class="nextText">&gt;</span></li><li class="page"><a href="https://www.arduitronics.com/article" class="container"><div class="left"></div><div class="center pname_article">บทความ</div><div class="right"></div></a></li><li class="next"><span class="nextText">&gt;</span></li><li class="page last"><a href="https://www.arduitronics.com/article/35/real-time-clock-ds3231" class="container"><div class="left"></div><div class="center">Real Time Clock DS3231</div><div class="right"></div></a></li></ul>
+<div style="clear: both;"></div></div><div class="unitShoe"></div></div>
+<div id="gadget-91" config_id="91" class="widgetUnit u-freedom"><div class="unitHat"></div><div class="unitShirt gadgetHTML"><div style="text-align: center;"><span style="color: #444444; font-size: 18px; line-height: 30px; font-family: OratorStd;">ท่านสามารถ Search หาคำสำคัญของบทความ และ สินค้าในเว็บไซต์ของเราได้จาก</span></div>
+<div style="text-align: center;"><span style="color: #444444; font-size: 18px; line-height: 30px; font-family: OratorStd;"> Search Box ด้านล่างนี้ครับ &nbsp;<img title="Smile" src="https://www.arduitronics.com/system/application/js/tiny_mce/plugins/emotions/img/smiley-smile.gif" alt="Smile" border="0" /></span></div></div><div class="unitShoe"></div></div>
+<div id="gadget-90" config_id="90" class="widgetUnit u-html"><div class="unitHat"></div><div class="unitShirt"><script>
+  (function() {
+    var cx = '017151668658439093076:a_tcwwy3u_c';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search></div><div class="unitShoe"></div></div>
+<div id="gadget-28" config_id="28" class="widgetUnit u-section u-section-article u-section-article-info"><a name="lnwcontent"></a><div class="unitHat"></div><div class="unitShirt">
+
+<div class="blog_header">
+<h1 class="blog_title">Real Time Clock DS3231</h1>
+<div class="blog_date"><span title="7 ธ.ค. 2556 14:31 น.">5 ปีที่ผ่านมา</span></div>
+<div class="blog_author">โดย <strong class="poster_owner">เจ้าของร้าน</strong></div>
+<br />
+</div>
+<div class="allblog_container">
+<div class="blogcontent_container">
+<div class="blog_content mceContentBody"><p><img src="https://o.lnwfile.com/_/o/_raw/7r/3b/35.jpg" alt="" /></p>
+<p><span style="font-size: 14px;"><strong>วันนี้เรานำเสนออุปกรณ์พื้นฐาน Real Time Clock กันครับ</strong></span></p>
+<p><span style="font-size: 14px; color: #000000;"><strong><br /></strong>&nbsp; &nbsp; ว่าไปแล้วโมดูล Real Time Clock &nbsp;(RTC) ก็คือ อุปกรณ์ที่ให้ค่าเวลาตามจริง ซึ่งทำงานโดยการจับสัญญานนาฬิกาที่ได้มาจาก Crystal นั่นเองครับ &nbsp;บางรุ่นก็จะมีถ่านสำรองมาให้ด้วย ทำหน้าที่ในการบันทึกเวลาอย่างต่อเนื่องถึงแม้ว่าจะไม่มีไฟเลี้ยงมาที่ตัวบอร์ด &nbsp;ตัวเวลาก็ยังคงนับได้ต่อ &nbsp;ทำให้ไม่ต้องเสียเวลามาตั้งเวลาใหม่หลังจากที่หยุดจ่ายไฟเลี้ยงครับ &nbsp;<span style="background-color: #ffff00;">โมดูล RTC นี้จำเป็นอย่างยิ่งกับการใช้งานที่ต้องมีการบันทึกเวลา (Time Stamp) เช่น อุปกรณ์ Data logger ครับ</span></span></p>
+<p><span style="font-size: 14px; color: #000000;">&nbsp; &nbsp;หลายคนก็อาจจะสงสัยว่าทำไมเราต้องการ RTC module นี้ในเมื่อ Arduino Board ของเราก็มีตัวจับเวลา เช่น millis() &nbsp;อยู่แล้ว &nbsp;คำตอบก็คือ ไม่โครโปรเซสเซอร์ที่เป็นหัวใจในการทำงานของ Arduino board ทั้งหลายนั้น ต้องทำงานสารพัดอย่างครับ &nbsp;ไม่ว่าจะเป็นคำสังพื้นฐาน เช่น บวก ลบ คูณ หาร &nbsp;ไปจนถึงการติดต่อกับอปุกรณ์ภายนอก &nbsp;คำสั่งที่มากมายซึ่งเราเป็นผู้เขียนลงใน Sketch นั้นจะทำงานแบบ อนุกรม (Serial) &nbsp;ว่าง่ายๆ ก็คือ ทำทีละบรรทัดครับ &nbsp; ทำให้การทำงานของคำสั่งจับเวลาก็จะถูกรบกวนไปด้วย &nbsp;จับได้บ้าง ไม่ได้บ้าง เดี๋ยวโดนสั่งไปทำโน่น &nbsp;โดยแทรก (Interrupt) ไปทำนี่ &nbsp;เวลาที่ได้จากการใช้คำสั่งนี้ ก็เลยไม่สามารถนำมาเป็นเวลาตามจริงที่ต้องการบันทึกไปพร้อมกับค่าอื่นๆ ที่ต้องการวัดได้ครับ</span></p>
+<p><span style="font-size: 14px; color: #000000;">&nbsp; ดังนั้น ในการประยุกต์ใช้กับงานที่ต้องการเวลาที่แม่นยำ และเป็นเวลาตามนาฬิกา &nbsp;ที่บอก วันที่ เดือน ปี ชั่วโมง นาที วินาที &nbsp;ก็เลยจำเป็นต้องใช้อุปกรณ์ที่ทำหน้าที่จับเวลาแยก &nbsp;ซึ่งก็ทำให้ต้องมีสัญญาณนาฬิกาจาก Crystal แยกต่างหากด้วยเช่นกัน &nbsp; ฟังดูแล้วอาจจะคิดว่ามันช่างยุ่งยากเหลือเกิน &nbsp;แตไม่เลยครับ &nbsp;มีคนที่ออกแบบ Chip หลายแบบ ที่ทำหน้าที่นี้มาให้เราเรียบร้อยแล้ว &nbsp;วิธีใช้งานก็ง่ายๆ &nbsp;ติดต่อผ่านไปที่บอร์ดโดยใช้การสื่อสารแบบ I2C หรือ Inter - Integrated Circuit ที่ใช้ SDA SCL VCC และ GND เท่านั้นครับ</span></p>
+<p><span style="font-size: 14px;">&nbsp; <span style="color: #000000;">ทีนี้การที่มันมีหลายรุ่นก็ทำให้เกิดความงงกันได้ &nbsp;โมดูล RTC นั้นมีอยู่หลายแบบครับ &nbsp;เอาเฉพาะที่ร้าน Arduitronics ขายก็มี 3 รุ่นแล้วครับ &nbsp;ได้แก่&nbsp;</span><span style="text-decoration: underline; color: #0000ff;"><a title="RTC DS3231" href="https://www.arduitronics.com/product/130/ds3231-at24c32-iic-module-precision-rtc-module-memory-module" target="_blank" rel="noopener noreferrer"><span style="color: #0000ff; text-decoration: underline;">DS3231</span></a></span>, <span style="text-decoration: underline; color: #0000ff;"><a title="DS1302" href="https://www.arduitronics.com/product/99/real-time-clock-module-rtc-ds1302" target="_blank" rel="noopener noreferrer"><span style="color: #0000ff; text-decoration: underline;">DS1302</span></a></span>,&nbsp;</span><span style="font-size: 14px; color: #000000; font-family: Helvetica, Tahoma, 'Lucida Sans Unicode', 'Lucida Grande', Geneva, sans-serif;"><span style="text-decoration: underline;"><span style="color: #0000ff;"><a title="DS1307" href="https://www.arduitronics.com/product/131/tiny-rtc-i2c-24c32-ds1307-real-time-clock-module-for-arduinoworks-with-arduino-boards" target="_blank" rel="noopener noreferrer"><span style="color: #0000ff; text-decoration: underline;">Tiny RTC I2C 24C32 DS1307 </span></a></span></span>&nbsp;แต่ละรุ่นก็จะมีความต่างกันในเรื่องของความละเอียดในการจับเวลา &nbsp;การมีแบตเตอรี่สำรอง &nbsp;ขนาด และแน่นอนก็คือราคาครับ</span></p>
+<p><span style="font-size: 14px; color: #000000; font-family: Helvetica, Tahoma, 'Lucida Sans Unicode', 'Lucida Grande', Geneva, sans-serif;">&nbsp; ตัวที่ผมจะใช้ในการสาธิตการทำงานของโมดูล RTC วันนี้ก็คือ&nbsp;<a style="font-size: 14px; font-family: Helvetica, Tahoma, 'Lucida Sans Unicode', 'Lucida Grande', Geneva, sans-serif;" title="RTC DS3231" href="https://www.arduitronics.com/product/130/ds3231-at24c32-iic-module-precision-rtc-module-memory-module" target="_blank" rel="noopener noreferrer"><span style="color: #0000ff; text-decoration: underline;">DS3231</span></a>&nbsp;ครับ &nbsp;ตัวนี้จะมีราคาสูงกว่าตัวอื่นนิดหน่อย &nbsp;(แต่ก็ไม่กี่สิบบาทหรอกครับ) แต่ข้อดีของมันก็คือ มีการชดเชยการเปลี่ยนแปลงของสัญญาณนาฬิกา เนื่องจากการเปลี่ยนแปลงของอุณหภูมิแวดล้อมครับ &nbsp;ว่าง่ายๆ ก็คือ เวลาอุณหภูมิเปลี่ยน สัญญาณนาฬิกาจาก Crystal ก็เปลี่ยน ทำให้เวลาก็เพี้ยนไปด้วย &nbsp;แต่โมดูลนี้ได้ทำการวัดค่าอุณหภูมิพร้อมทั้งชดเชยความเปลี่ยนแปลงนี้ไปด้วยแล้ว &nbsp; ทำให้เวลาที่ได้มีความแม่นยำสูงมาก&nbsp;</span></p>
+<p><span style="font-size: 14px;"><strong>&nbsp;</strong></span></p>
+<p><span style="font-size: 14px;"><strong>Data Sheet DS3231</strong></span></p>
+<p><span style="text-decoration: underline; color: #0000ff;"><span style="font-size: 14px;"><a href="http://datasheets.maximintegrated.com/en/ds/DS3231.pdf"><span style="color: #0000ff; text-decoration: underline;">http://datasheets.maximintegrated.com/en/ds/DS3231.pdf</span></a></span></span></p>
+<p><span style="text-decoration: underline; color: #0000ff;"><span style="font-size: 14px;"><span style="color: #0000ff; text-decoration: underline;"><br /></span></span></span><span style="color: #000000;"><span style="font-size: 14px;">คราวนี้มาถึงการใช้งานกันบ้างครับ &nbsp;ไม่ว่าจะเป็น RTC รุ่นไหน ก็ต้องเริ่มจากการตั้งเวลาครั้งแรกกันก่อนครับ แต่ละรุ่นก็จะมีวิธีการที่แตกต่างกันไป &nbsp;ผมขอเขียนตัวอย่างรุ่น&nbsp;<a style="color: #555555; font-size: 14px; font-family: Helvetica, Tahoma, 'Lucida Sans Unicode', 'Lucida Grande', Geneva, sans-serif;" title="RTC DS3231" href="https://www.arduitronics.com/product/130/ds3231-at24c32-iic-module-precision-rtc-module-memory-module" target="_blank" rel="noopener noreferrer"><span style="color: #0000ff; text-decoration: underline;">DS3231</span></a>&nbsp; เท่านั้นนะครับ รุ่นอื่นก็จะหาได้จาก&nbsp;<span style="text-decoration: underline; color: #0000ff;"><a title="GITHUB" href="www.github.com" target="_blank" rel="noopener noreferrer"><span style="color: #0000ff; text-decoration: underline;">www.github.com</span></a> </span>ครับ</span></span></p>
+<p><span style="font-size: 14px; color: #000000;">1. &nbsp;เริ่่มต้นจากการ Download Library ครับ &nbsp;(ในขณะที่ผมเขียนนี้ Sketch ทั้งหมดถูกทดสอบบน Arduino ide 1.0.5 นะครับ)</span></p>
+<p><span style="text-decoration: underline; color: #0000ff; font-size: 14px;"><a title="DS3231RTC" href="http://github.com/JChristensen/DS3232RTC" target="_blank" rel="noopener noreferrer"><span style="color: #0000ff; text-decoration: underline;">http://github.com/JChristensen/DS3232RTC</span></a></span></p>
+<p><span style="font-size: 14px;"><a title="Streamming" href="http://arduiniana.org/libraries/streaming/" target="_blank" rel="noopener noreferrer"><span style="text-decoration: underline;"><span style="color: #0000ff; text-decoration: underline;">http://arduiniana.org/libraries/streaming/</span></span></a></span></p>
+<p><span style="text-decoration: underline; color: #0000ff; font-size: 14px;"><a title="http://playground.arduino.cc/Code/Time" href="http://playground.arduino.cc/Code/Time" target="_blank" rel="noopener noreferrer"><span style="color: #0000ff; text-decoration: underline;">http://playground.arduino.cc/Code/Time</span></a></span></p>
+<p><span style="text-decoration: underline; color: #0000ff; font-size: 14px;"><a title="Time" href="http://arduino.cc/en/Reference/Wire" target="_blank" rel="noopener noreferrer"><span style="color: #0000ff; text-decoration: underline;">http://arduino.cc/en/Reference/Wire</span></a></span></p>
+<p><span style="font-size: 14px;">&nbsp;</span></p>
+<p><span style="font-size: 14px;">หลังจาก Download มาแล้ว ให้ไปใส่ไว้ใน Folder &nbsp; xxxx\arduino-1.0.x\libraries &nbsp;นะครับ</span></p>
+<p><span style="font-size: 14px;"><img src="https://o.lnwfile.com/_/o/_raw/ex/2q/gl.jpg" alt="" /><br /></span></p>
+<p>&nbsp;</p>
+<p><span style="color: #000000;"><span style="font-size: 14px;">&nbsp;</span></span></p>
+<p><span style="color: #000000;"><span style="font-size: 14px;">&nbsp;</span></span></p>
+<table style="height: 3010px; width: 670px; background-color: #cef8fc;" border="0">
+<tbody>
+<tr>
+<td>
+<blockquote>
+<blockquote>/*----------------------------------------------------------------------*</blockquote>
+<blockquote>&nbsp;* Display the date and time from a DS3231 or DS3232 RTC every second. &nbsp;*</blockquote>
+<blockquote>&nbsp;* Display the temperature once per minute. (The DS3231 does a &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* temperature conversion once every 64 seconds. This is also the &nbsp; &nbsp; &nbsp; *</blockquote>
+<blockquote>&nbsp;* default for the DS3232.) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* Set the date and time by entering the following on the Arduino &nbsp; &nbsp; &nbsp; *</blockquote>
+<blockquote>&nbsp;* serial monitor: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp;year,month,day,hour,minute,second, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* Where &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp;year can be two or four digits, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp;month is 1-12, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp;day is 1-31, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp;hour is 0-23, and &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp;minute and second are 0-59. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* Entering the final comma delimiter (after "second") will avoid a &nbsp; &nbsp; *</blockquote>
+<blockquote>&nbsp;* one-second timeout and will allow the RTC to be set more accurately. *</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* No validity checking is done, invalid values or incomplete syntax &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* in the input will result in an incorrect RTC setting. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* Jack Christensen 08Aug2013 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* Tested with Arduino 1.0.5, Arduino Uno, DS3231/Chronodot, DS3232. &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* This work is licensed under the Creative Commons Attribution- &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* ShareAlike 3.0 Unported License. To view a copy of this license, &nbsp; &nbsp; *</blockquote>
+<blockquote>&nbsp;* visit http://creativecommons.org/licenses/by-sa/3.0/ or send a &nbsp; &nbsp; &nbsp; *</blockquote>
+<blockquote>&nbsp;* letter to Creative Commons, 171 Second Street, Suite 300, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</blockquote>
+<blockquote>&nbsp;* San Francisco, California, 94105, USA. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *</blockquote>
+<blockquote>&nbsp;*----------------------------------------------------------------------*/&nbsp;</blockquote>
+<blockquote>&nbsp;</blockquote>
+<blockquote>#include &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;//http://github.com/JChristensen/DS3232RTC</blockquote>
+<blockquote>#include &nbsp; &nbsp; &nbsp; &nbsp;//http://arduiniana.org/libraries/streaming/</blockquote>
+<blockquote>#include &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //http://playground.arduino.cc/Code/Time</blockquote>
+<blockquote>#include &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //http://arduino.cc/en/Reference/Wire</blockquote>
+<blockquote>void setup(void)</blockquote>
+<blockquote>{</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.begin(115200);</blockquote>
+<blockquote>&nbsp; &nbsp;&nbsp;</blockquote>
+<blockquote>&nbsp; &nbsp; //setSyncProvider() causes the Time library to synchronize with the</blockquote>
+<blockquote>&nbsp; &nbsp; //external RTC by calling RTC.get() every five minutes by default.</blockquote>
+<blockquote>&nbsp; &nbsp; setSyncProvider(RTC.get);</blockquote>
+<blockquote>&nbsp; &nbsp; Serial &lt;&lt; F("RTC Sync");</blockquote>
+<blockquote>&nbsp; &nbsp; if (timeStatus() != timeSet) Serial &lt;&lt; F(" FAIL!");</blockquote>
+<blockquote>&nbsp; &nbsp; Serial &lt;&lt; endl;</blockquote>
+<blockquote>}</blockquote>
+<blockquote>void loop(void)</blockquote>
+<blockquote>{</blockquote>
+<blockquote>&nbsp; &nbsp; static time_t tLast;</blockquote>
+<blockquote>&nbsp; &nbsp; time_t t;</blockquote>
+<blockquote>&nbsp; &nbsp; tmElements_t tm;</blockquote>
+<blockquote>&nbsp; &nbsp; //check for input to set the RTC, minimum length is 12, i.e. yy,m,d,h,m,s</blockquote>
+<blockquote>&nbsp; &nbsp; if (Serial.available() &gt;= 12) {</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; //note that the tmElements_t Year member is an offset from 1970,</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; //but the RTC wants the last two digits of the calendar year.</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; //use the convenience macros from Time.h to do the conversions.</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; int y = Serial.parseInt();</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; if (y &gt;= 100 &amp;&amp; y &lt; 1000)</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Serial &lt;&lt; F("Error: Year must be two digits or four digits!") &lt;&lt; endl;</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; else {</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (y &gt;= 1000)</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tm.Year = CalendarYrToTm(y);</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else &nbsp; &nbsp;//(y &lt; 100)</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tm.Year = y2kYearToTm(y);</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tm.Month = Serial.parseInt();</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tm.Day = Serial.parseInt();</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tm.Hour = Serial.parseInt();</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tm.Minute = Serial.parseInt();</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tm.Second = Serial.parseInt();</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; t = makeTime(tm);</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RTC.write(tm);</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTime(t); &nbsp; &nbsp; &nbsp; &nbsp;</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Serial &lt;&lt; F("RTC set to: ");</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printDateTime(t);</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Serial &lt;&lt; endl;</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //dump any extraneous input</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while (Serial.available() &gt; 0) Serial.read();</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; }</blockquote>
+<blockquote>&nbsp; &nbsp; }</blockquote>
+<blockquote>&nbsp; &nbsp;&nbsp;</blockquote>
+<blockquote>&nbsp; &nbsp; t = now();</blockquote>
+<blockquote>&nbsp; &nbsp; if (t != tLast) {</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; tLast = t;</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; printDateTime(t);</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; if (second(t) == 0) {</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; float c = RTC.temperature() / 4.;</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; float f = c * 9. / 5. + 32.;</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Serial &lt;&lt; F(" &nbsp;") &lt;&lt; c &lt;&lt; F(" C &nbsp;") &lt;&lt; f &lt;&lt; F(" F");</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; }</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; Serial &lt;&lt; endl;</blockquote>
+<blockquote>&nbsp; &nbsp; }</blockquote>
+<blockquote>}</blockquote>
+<blockquote>//print date and time to Serial</blockquote>
+<blockquote>void printDateTime(time_t t)</blockquote>
+<blockquote>{</blockquote>
+<blockquote>&nbsp; &nbsp; printDate(t);</blockquote>
+<blockquote>&nbsp; &nbsp; Serial &lt;&lt; ' ';</blockquote>
+<blockquote>&nbsp; &nbsp; printTime(t);</blockquote>
+<blockquote>}</blockquote>
+<blockquote>//print time to Serial</blockquote>
+<blockquote>void printTime(time_t t)</blockquote>
+<blockquote>{</blockquote>
+<blockquote>&nbsp; &nbsp; printI00(hour(t), ':');</blockquote>
+<blockquote>&nbsp; &nbsp; printI00(minute(t), ':');</blockquote>
+<blockquote>&nbsp; &nbsp; printI00(second(t), ' ');</blockquote>
+<blockquote>}</blockquote>
+<blockquote>//print date to Serial</blockquote>
+<blockquote>void printDate(time_t t)</blockquote>
+<blockquote>{</blockquote>
+<blockquote>&nbsp; &nbsp; printI00(day(t), 0);</blockquote>
+<blockquote>&nbsp; &nbsp; Serial &lt;&lt; monthShortStr(month(t)) &lt;&lt; _DEC(year(t));</blockquote>
+<blockquote>}</blockquote>
+<blockquote>//Print an integer in "00" format (with leading zero),</blockquote>
+<blockquote>//followed by a delimiter character to Serial.</blockquote>
+<blockquote>//Input value assumed to be between 0 and 99.</blockquote>
+<blockquote>void printI00(int val, char delim)</blockquote>
+<blockquote>{</blockquote>
+<blockquote>&nbsp; &nbsp; if (val &lt; 10) Serial &lt;&lt; '0';</blockquote>
+<blockquote>&nbsp; &nbsp; Serial &lt;&lt; _DEC(val);</blockquote>
+<blockquote>&nbsp; &nbsp; if (delim &gt; 0) Serial &lt;&lt; delim;</blockquote>
+<blockquote>&nbsp; &nbsp; return;</blockquote>
+<blockquote>}</blockquote>
+</blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span style="text-decoration: underline; color: #0000ff;"><span style="font-size: 14px;"><span style="color: #0000ff; text-decoration: underline;"><br /></span></span></span><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;">2. จากนั้นก็ต่อโมดูลกับ Arduino board ครับ &nbsp;วันนี้ผมใช้ <a title="UNO R3" href="https://www.arduitronics.com/product/8/arduino-uno-r3free-usb-cable" target="_blank" rel="noopener noreferrer"><span style="text-decoration: underline; color: #0000ff;">Arduino UNO R3</span></a> นะครับ ก็ตามรูปเลยครับ</span></span></span></p>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;">&nbsp; &nbsp; &nbsp;VCC -&gt; 5 VDC</span></span></span></p>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;">&nbsp; &nbsp; &nbsp;GND -&gt; &nbsp;GND</span></span></span></p>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;">&nbsp; &nbsp; &nbsp;SCL -&gt; A5 &nbsp;</span></span></span></p>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;">&nbsp; &nbsp; &nbsp;SDA -&gt; A4</span></span></span></p>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;"><img src="https://o.lnwfile.com/_/o/_raw/t1/5u/4g.jpg" alt="" /><br /></span></span></span></p>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;">3. จากนั้นก็ upload sketch ด้านบน หรือ เปิดใน Examples -&gt; DS3231RTC -&gt; SetSerial &nbsp;(อย่าลืมตััง baud rate ของ Serial monitor ให้ตรงกันด้วยนะครับ)</span></span></span></p>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;">&nbsp;คราวนี้เวลาจะตั้งค่านาฬิกา ก็ไปที่ ช่อง Input ของ Serial monitor แล้วจัดไปตามนี้ครับ</span></span></span></p>
+<p style="text-align: left;"><span style="font-size: 14px;">&nbsp; &nbsp;รูปแบบ &nbsp; ปี, เดือน, วันที่, ชั่วโมง, นาที, วินาที</span></p>
+<p style="text-align: left;"><span style="font-size: 14px;">โดย</span></p>
+<p style="text-align: center;"><span style="font-size: 14px; background-color: #ffff00;">ปีอาจใช้เป็น 2 หรือ 4 ดิจิตก็ได้</span></p>
+<p style="text-align: center;"><span style="font-size: 14px; background-color: #ffff00;">เดือน &nbsp;1-12</span></p>
+<p style="text-align: center;"><span style="font-size: 14px; background-color: #ffff00;">วัน 1-31</span></p>
+<p style="text-align: center;"><span style="font-size: 14px; background-color: #ffff00;">ชั่วโมง 0-23&nbsp;</span></p>
+<p style="text-align: center;"><span style="font-size: 14px; background-color: #ffff00;">นาทีและวินาที 0-59</span></p>
+<p style="text-align: left;"><span style="font-size: 14px;">ตัวอย่างนะครับ &nbsp;สมมุติว่าวันนี้เป็นวันที่ 1 มกราคม 2014 เวลา 10:10 am 30&nbsp;วินาที &nbsp;</span></p>
+<p style="text-align: left;"><span style="font-size: 14px;">ให้พิมพ์ลงใน Serial monitor ว่า &nbsp;2014,1,1,10,10,30&nbsp;</span></p>
+<p><span style="font-size: 14px;">&nbsp;<img src="https://o.lnwfile.com/_/o/_raw/q6/25/31.jpg" alt="" /></span></p>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;">&nbsp;ง่ายๆ เท่านี้ เราก็สามารถบันทึกเวลาปัจจุบันให้กับ RTC&nbsp;<a style="font-size: 14px; font-family: Helvetica, Tahoma, 'Lucida Sans Unicode', 'Lucida Grande', Geneva, sans-serif;" title="RTC DS3231" href="https://www.arduitronics.com/product/130/ds3231-at24c32-iic-module-precision-rtc-module-memory-module" target="_blank" rel="noopener noreferrer"><span style="color: #0000ff; text-decoration: underline;">DS3231</span></a><span style="color: #000000; font-family: Helvetica, Tahoma, 'Lucida Sans Unicode', 'Lucida Grande', Geneva, sans-serif; font-size: 14px;">&nbsp;</span>กันแล้วครับ &nbsp;คราวนี้ถ้าลองกดปุ่ม Reset ดูจะพบว่าเวลาที่เริ่มต้นแสดงก็ไม่ได้เปลี่ยนไปนับใหม่ &nbsp;แต่เป็นการแสดงค่าเวลา ณ ปัจจุบันต่อเนื่องไปเรื่อยๆ ครับ</span></span></span></p>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;">&nbsp;</span></span></span></p>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;">&nbsp;ลองอีกตัวอย่างใน Examples นะครับ ตัวอย่างที่ชื่อว่า TimeRTC &nbsp;เริ่มจากการ upload sketch ลงไปแล้วเปิด Serial monitor ครับ</span></span></span></p>
+<table style="background-color: #c4f9fc;" border="0">
+<tbody>
+<tr>
+<td>
+<blockquote>
+<blockquote>/*</blockquote>
+<blockquote>&nbsp;* TimeRTC.pde</blockquote>
+<blockquote>&nbsp;* Example code illustrating Time library with Real Time Clock.</blockquote>
+<blockquote>&nbsp;* This example is identical to the example provided with the Time Library,</blockquote>
+<blockquote>&nbsp;* only the #include statement has been changed to include the DS3232RTC library.</blockquote>
+<blockquote>&nbsp;*/</blockquote>
+<blockquote>#include &nbsp; &nbsp;//http://github.com/JChristensen/DS3232RTC</blockquote>
+<blockquote>#include &nbsp; &nbsp; &nbsp; &nbsp; //http://www.arduino.cc/playground/Code/Time &nbsp;</blockquote>
+<blockquote>#include &nbsp; &nbsp; &nbsp; &nbsp; //http://arduino.cc/en/Reference/Wire (included with Arduino IDE)</blockquote>
+<blockquote>void setup(void)</blockquote>
+<blockquote>{</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.begin(9600);</blockquote>
+<blockquote>&nbsp; &nbsp; setSyncProvider(RTC.get); &nbsp; // the function to get the time from the RTC</blockquote>
+<blockquote>&nbsp; &nbsp; if(timeStatus() != timeSet)&nbsp;</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; Serial.println("Unable to sync with the RTC");</blockquote>
+<blockquote>&nbsp; &nbsp; else</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; Serial.println("RTC has set the system time"); &nbsp; &nbsp; &nbsp;</blockquote>
+<blockquote>}</blockquote>
+<blockquote>void loop(void)</blockquote>
+<blockquote>{</blockquote>
+<blockquote>&nbsp; &nbsp; digitalClockDisplay(); &nbsp;</blockquote>
+<blockquote>&nbsp; &nbsp; delay(1000);</blockquote>
+<blockquote>}</blockquote>
+<blockquote>void digitalClockDisplay(void)</blockquote>
+<blockquote>{</blockquote>
+<blockquote>&nbsp; &nbsp; // digital clock display of the time</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.print(hour());</blockquote>
+<blockquote>&nbsp; &nbsp; printDigits(minute());</blockquote>
+<blockquote>&nbsp; &nbsp; printDigits(second());</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.print(' ');</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.print(day());</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.print(' ');</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.print(month());</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.print(' ');</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.print(year());&nbsp;</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.println();&nbsp;</blockquote>
+<blockquote>}</blockquote>
+<blockquote>void printDigits(int digits)</blockquote>
+<blockquote>{</blockquote>
+<blockquote>&nbsp; &nbsp; // utility function for digital clock display: prints preceding colon and leading 0</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.print(':');</blockquote>
+<blockquote>&nbsp; &nbsp; if(digits &lt; 10)</blockquote>
+<blockquote>&nbsp; &nbsp; &nbsp; &nbsp; Serial.print('0');</blockquote>
+<blockquote>&nbsp; &nbsp; Serial.print(digits);</blockquote>
+<blockquote>}</blockquote>
+</blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;"><img src="https://o.lnwfile.com/_/o/_raw/4w/28/a3.jpg" alt="" /><br /></span></span></span></p>
+<p><span style="color: #0000ff;"><span style="font-size: 14px;"><span style="color: #000000;">&nbsp;เรียบร้อยครับ &nbsp;เราสามาถนำเวลานี้ไปบันทึกลงในโมดูลอื่นๆ เช่น <a title="SD Card" href="https://www.arduitronics.com/product/11/sd-card-module" target="_blank" rel="noopener noreferrer"><span style="text-decoration: underline; color: #0000ff;">SD Card</span></a> หรือ ส่งผ่าน <a title="Ethernet Shield" href="https://www.arduitronics.com/product/14/ethernet-shield-w5100micro-sd-card-shield-free" target="_blank" rel="noopener noreferrer"><span style="text-decoration: underline; color: #0000ff;">Ethernet Shield </span></a>ไปที่ Server ที่เขียนรอรับค่าได้ครับ</span></span></span></p>
+<p><span style="font-size: 14px;">&nbsp; แถมอีกนิดครับ &nbsp;โมดูล RTC ส่วนใหญ่จะมีความสามารถในการปรับค่าวันที่ของเดือนที่มี 30 วันและ 31 วัน &nbsp;นอกจากนี้ยังปรับค่าปีที่มี 355 และ 356 วันให้เองโดยอัตโนมัติครับ ซึ่งจุดนี้แน่นอนว่าการเขียน Sketch บน <a title="Arduino Board" href="https://www.arduitronics.com/category/2/development-boardsarduino-boards-and-etc" target="_blank" rel="noopener noreferrer"><span style="text-decoration: underline;"><span style="color: #0000ff; text-decoration: underline;">Arduino board</span></span></a> จะทำได้ค่อนข้างยาก &nbsp;เนื่องจากเวลาที่นานเป็นปีๆที่ต้องนับสัญญาญนาฬิกาจะทำให้เกิดความเพี้ยนแน่นอนครับ</span></p>
+<p><span style="font-size: 14px;">&nbsp;</span></p>
+<p><span style="font-size: 14px;">วันนี้พอแค่นี้ครับ..... :)</span></p>
+<p><span style="font-size: 14px;">&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: 'times new roman', times;">&nbsp;<strong>โดย &nbsp;Mountain A</strong></span></p>
+<p><span style="font-size: 18px; font-family: 'times new roman', times;"><strong>&nbsp;</strong></span></p>
+<p><span style="font-size: 18px; font-family: 'times new roman', times;"><strong><span style="text-decoration: underline;"><a style="line-height: 14px;" href="https://www.arduitronics.com/"><span style="color: #0000ff;">www.arduitronics.com</span></a></span></strong></span></p>
+<p style="color: #555555; font-family: Tahoma, Arial, 'MS Sans Serif', sans-serif; line-height: 14px;" dir="ltr"><span style="font-family: 'times new roman', times; font-size: 18px;"><strong><span style="color: #0000ff; text-decoration: underline;"><a href="http://www.facebook.com/arduitronics"><span style="color: #0000ff;">www.facebook.com/arduitronics</span></a></span></strong></span></p>
+<p><span style="color: #0000ff; font-family: 'times new roman', times;"><span style="font-size: 14px;"><span style="color: #000000;">&nbsp;</span></span></span></p></div>
+<br />
+<div class="blog_tag"><a href="https://www.arduitronics.com/article/tag/real-time-clock">real time clock</a><span>, </span><a href="https://www.arduitronics.com/article/tag/rtc">RTC</a><span>, </span><a href="https://www.arduitronics.com/article/tag/ds3231">DS3231</a><span>, </span><a href="https://www.arduitronics.com/article/tag/environmental-sensor">Environmental sensor</a><span>, </span><a href="https://www.arduitronics.com/article/tag/sensors">Sensors</a><span>, </span><a href="https://www.arduitronics.com/article/tag/modules">Modules</a><span>, </span><a href="https://www.arduitronics.com/article/tag/arduino">arduino</a><span>, </span><a href="https://www.arduitronics.com/article/tag/arduino-cc">Arduino.cc</a></div>
+<div class="blog_share">
+<span class="share_text">Share</span>
+<div class="page_share_box">
+<div class="qr_code"><img src="https://chart.googleapis.com/chart?cht=qr&chl=http%3A%2F%2Fwww.arduitronics.com%2Fb%2F35&chs=117x117" alt="Scan this!"></div>
+<div class="social_share">
+<div>
+<div class="facebook_share_btn_cover">
+<button type="button" class="facebook_share_btn" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.arduitronics.com%2Farticle%2F35','share_fb','width=650,height=306,scrollbars=true,location=no,resizable=no')"><span class="fb-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="_1pbq" color="#ffffff"><path fill="#ffffff" fill-rule="evenodd" d="M8 14H3.667C2.733 13.9 2 13.167 2 12.233V3.667A1.65 1.65 0 0 1
+3.667 2h8.666A1.65 1.65 0 0 1 14 3.667v8.566c0 .934-.733
+1.667-1.667
+1.767H10v-3.967h1.3l.7-2.066h-2V6.933c0-.466.167-.9.867-.9H12v-1.8c.033
+0-.933-.266-1.533-.266-1.267 0-2.434.7-2.467
+2.133v1.867H6v2.066h2V14z"></path></svg></span><span class="fb-text">Share</span></button></div>
+<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-url="https://www.arduitronics.com/article/35" data-text="Real Time Clock DS3231">Tweet</a>
+<div class="line-it-button" data-lang="th" data-type="share-c" data-url="https://www.arduitronics.com/article/35/real-time-clock-ds3231" style="display: none;"></div>
+<script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+</div><div class="copy_url"><input class="show_url" type="text" readonly="readonly" value="https://www.arduitronics.com/b/35" onclick="this.select();" /><button class="button_copy" onclick="copyTextToClipboard($(this).parent().find('.show_url').val())">COPY</button></div></div>
+</div></div>
+<div class="blog_footer"></div>
+<div class="fbcomments_area">
+<div class="fb-comments" data-href="https://www.arduitronics.com/article/35" data-numposts="10" data-width="660"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+function article_delete(){
+if(confirm('คุณต้องการลบบทความนี้ใช่หรือไม่?')){
+$.lnwajax.run('deletearticle',true,{
+type: 'POST',
+url: 'https' + '://' + 'www.arduitronics.com/article/action/deletearticle/35',
+data: {},
+dataType: 'json',
+success: function(response){
+lnwajax_response(response,function(rdata){
+window.location.href = 'https://www.arduitronics.com/article';
+},function(rkey,rdata){
+alert(rkey);
+});
+}
+});
+}
+}
+$(document).ready(function(){
+
+    
+var max_img = $('.u-section .blog_content').width();
+$('.u-section .blog_content img').load(function(){
+if($(this).width() > max_img){
+$(this).width(max_img);
+$(this).height('auto');
+}else{
+$(this).width('');
+}
+});
+if(mobilecheck()){
+//var line_btn = '<a class="social_btn" target="_blank" href="http://line.me/R/msg/text/?Real+Time+Clock+DS3231+http%3A%2F%2Fwww.arduitronics.com%2Farticle%2F35"><img src="https://www.arduitronics.com/system/application/modules/lnwshopweb/_images/line_button.png" width="24" /></a>';
+var line_btn = '<button type="button" class="social_btn" onclick="window.open(\'http://line.me/R/msg/text/?Real+Time+Clock+DS3231+http%3A%2F%2Fwww.arduitronics.com%2Farticle%2F35\')">\
+<img src="https://www.arduitronics.com/system/application/modules/lnwshopweb/_images/line_button.png" width="24" /></button>';
+$('.page_share .social_btns').append(line_btn);
+}
+});
+</script></div><div class="unitShoe"></div></div>
+<div id="gadget-77" config_id="77" class="widgetUnit u-social/button"><div class="unitHat"></div><div class="unitShirt"><div class="like_button" style="float: left; padding: 5px;">
+<div class="fb-like" data-width="220" data-action="like" data-show-faces="true" data-share="false" data-colorscheme="light"></div>
+</div>
+<div class="tweet_button" style="float: left; padding: 5px;">
+<a href="https://twitter.com/intent/tweet" class="twitter-share-button" >Tweet</a>
+</div>
+<div style="clear: both;"></div></div><div class="unitShoe"></div></div>
+<div id="gadget-92" config_id="92" class="widgetUnit u-html"><div class="unitHat"></div><div class="unitShirt"><div style="margin:5px 10px;display:inline;float:right"><br>
+</div>
+<div style="margin:5px 10px;display:inline;float:right"><br>
+</div>
+<div style="margin:5px 10px;display:inline;float:right"><br>
+</div>
+<div style="margin:5px 10px;display:inline;float:right"><br>
+</div>
+<span style="background-color:transparent;color:rgb(153,0,0);text-align:center">
+<div style="font-size:large"><span style="background-color:transparent;color:rgb(153,0,0);font-size:large;text-align:center">
+<div style="display:block;text-align:left"><a href="https://sites.google.com/site/arduitronics/documents/documents.gif?attredirects=0" imageanchor="1"><img border="0" src="https://sites.google.com/site/arduitronics/documents/documents.gif"></a></div>
+<br>
+</span></div>
+<font size="3"><b>หน้านี้เป็นสารบัญของบทความที่ปรากฏในเว็บของ&nbsp;</b></font></span><font size="3"><b><a href="http://arduitronics.com/" style="background-color:transparent;text-align:center">Arduitronics.com</a><span style="background-color:transparent;color:rgb(153,0,0);text-align:center">&nbsp;นะครับ &nbsp;จะขอแบ่งออกเป็นหัวข้อตามกลุ่มของสินค้าในร้านดังต่อไปนี้</span></b></font>
+<div>
+<div style="text-align:center"><font color="#990000" size="3"><b><br>
+</b></font></div>
+<div>
+<div style="text-align:center"><font color="#990000" size="3"><b><br>
+</b></font></div>
+<div style="text-align:center"><font color="#990000" size="4"><b style="background-color:rgb(255,255,0)">บทความการติดตั้งและใช้งาน Raspberry Pi</b></font></div>
+<div style="text-align:center"><br>
+</div>
+<div style="text-align:center">
+<ul style="text-align:start"><li><span style="background-color:transparent"><b><font size="2">การลงโปรแกรม</font></b></span></li>
+<ul><li><span style="background-color:transparent"><b><font size="2"><a href="https://www.arduitronics.com/article/raspberry-pi-media-center-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-1" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif;font-size:12.222222328186035px">Raspberry Pi - Media Center (ตอนที่ 1)</a></font></b></span></li>
+<li><span style="background-color:transparent"><b><a href="https://www.arduitronics.com/article/raspberry-pi-media-center-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-2" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif;font-size:12.222222328186035px">Raspberry Pi - Media Center (ตอนที่ 2)</a></b></span></li>
+<li><span style="background-color:transparent"><a href="https://www.arduitronics.com/article/raspberry-pi-how-to-cook-raspbian-os" style="text-decoration:none;color:rgb(51,51,51);font-weight:bold;line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif;font-size:12px">Raspberry Pi - How to Cook Raspbian OS</a></span></li>
+<li><a href="https://www.arduitronics.com/article/raspberry-pi-connect-to-the-real-world-part-1" style="text-decoration:none;color:rgb(51,51,51);font-weight:bold;line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif;font-size:12px">Raspberry Pi - Connect to the real world : Part 1</a></li>
+<li><a href="https://www.arduitronics.com/article/raspberry-pi-connect-to-the-real-world-gpio-part-2" style="text-decoration:none;color:rgb(51,51,51);font-weight:bold;line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif;font-size:12px">Raspberry Pi -- Connect to the real world GPIO : Part 2</a></li>
+<li><a href="https://www.arduitronics.com/article/raspberry-pi-%E0%B8%81%E0%B8%B1%E0%B8%9A-shield-%E0%B8%82%E0%B8%AD%E0%B8%87-arduino" style="text-decoration:none;color:rgb(51,51,51);font-weight:bold;line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif;font-size:12px">Raspberry Pi กับ Shield ของ Arduino</a></li>
+<li><a href="https://www.arduitronics.com/article/raspberry-pi-analog-input-with-adc-mcp3208" style="text-decoration:none;color:rgb(51,51,51);font-weight:bold;line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif;font-size:12px">Raspberry Pi - Analog Input with ADC (MCP3208)</a></li></ul></ul>
+</div>
+<div style="text-align:center">
+<hr>
+</div>
+<div style="text-align:center"><font color="#990000" size="3"><b><br>
+</b></font></div>
+<div style="text-align:center"><font color="#990000" size="3"><b style="background-color:rgb(255,255,0)">บทความการใช้งาน Arduino และอุปกรณ์ต่อพ่วงต่างๆ</b></font></div>
+<div>
+<ul><li><span style="background-color:transparent"><b><font size="2">การลงโปรแกรมและไลบรารี่</font></b></span></li>
+<ul><li><a href="https://www.arduitronics.com/article/arduino-ide-%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B9%81%E0%B8%A3%E0%B8%81" style="background-color:transparent;text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Arduino IDE กับการเริ่มต้นครั้งแรก !!!</font></b></a>
+<ul></ul>
+</li>
+<li><a href="https://www.arduitronics.com/article/%E0%B9%80%E0%B8%A3%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-arduino-uno-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-1-%E0%B9%81%E0%B8%99%E0%B8%B0%E0%B8%99%E0%B8%B3%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%81%E0%B9%88%E0%B8%AD%E0%B8%99" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">เริ่มต้นใช้งาน Arduino UNO ตอนที่ 1 (แนะนำตัวกันก่อน :-)</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/%E0%B9%80%E0%B8%A3%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-arduino-%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-2-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A5%E0%B8%87%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%81%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">เริ่มต้นใช้งาน Arduino บอร์ด ตอนที่ 2 (การลงโปรแกรมที่จำเป็น)</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/%E0%B9%80%E0%B8%A3%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-arduino-%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-3-%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%81%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B9%81%E0%B8%A3%E0%B8%81%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%89%E0%B8%B1%E0%B8%99" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">เริ่มต้นใช้งาน Arduino บอร์ด ตอนที่ 3 (โปรแกรมแรกของฉัน)</font></b></a></li>
+<li><b style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><font size="2"><a href="https://www.arduitronics.com/article/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87-library-%E0%B8%9A%E0%B8%99-arduino-ide" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif">การติดตั้ง Library บน Arduino IDE</a></font></b></li>
+<li><a href="https://www.arduitronics.com/article/arduino-pro-mini-how-to-upload-sketch" style="text-decoration:none;color:rgb(51,51,51);font-weight:bold;line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif;font-size:12px">Arduino Pro Mini - How to Upload Sketch</a></li></ul></ul>
+<ul><li><span style="background-color:transparent"><b><font size="2">เรื่องของบอร์ด Arduino และ การใช้งานบอร์ด</font></b></span></li>
+<ul><li><a href="https://www.arduitronics.com/article/%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94-arduino-%E0%B9%81%E0%B8%9A%E0%B8%9A-compatible" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">บอร์ด Arduino แบบ Compatible ?!?</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/%E0%B8%A1%E0%B8%B2%E0%B8%8A%E0%B8%A1%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%95%E0%B8%B2%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94-arduino-%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99%E0%B8%95%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%86-%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%94%E0%B8%B5%E0%B8%81%E0%B8%A7%E0%B9%88%E0%B8%B2" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">มาชมหน้าตาของบอร์ด Arduino รุ่นต่างๆ กันดีกว่า</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/installing-driver-arduino-on-window" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Installing Driver Arduino on Window</font></b></a></li></ul></ul>
+<ul><li><b><font size="2">โมดูลเพื่อวัดค่าจากสิ่งแวดล้อม</font></b></li>
+<ul><li><a href="https://www.arduitronics.com/article/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-dht11-humitdity-and-temperature-sensor-%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94-arduino" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">การใช้งาน DHT11 Humitdity and Temperature Sensor กับบอร์ด Arduino</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/ultrasonic-ranging-module-hc-sr04" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Ultrasonic Ranging Module HC-SR04</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/inertial-sensors-%E0%B8%AB%E0%B8%B2%E0%B8%A1%E0%B8%B8%E0%B8%A1-pitch-%E0%B9%81%E0%B8%A5%E0%B8%B0-roll-%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B9%80%E0%B8%8B%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%A3%E0%B9%88%E0%B8%87" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Inertial Sensors: หามุม Pitch และ Roll จากเซ็นเซอร์วัดความเร่ง</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/real-time-clock-ds3231" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Real Time Clock DS3231</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/moisture-sensor-on-arduino-and-android-over-bluetooth" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Moisture Sensor on Arduino and Android over Bluetooth</font></b></a></li>
+<li><b style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><font size="2"><a href="https://www.arduitronics.com/article/moisture-sensor-on-arduino-and-android-over-bluetooth-part-2" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif">Moisture Sensor on Arduino and Android over Bluetooth: Part 2</a></font></b></li>
+<li><b style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><a href="https://www.arduitronics.com/article/i2c-communication-case-study-of-gy-30-ambient-light-sensor" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-size:12px">I2C Communication: Case study of GY-30 (Ambient Light Sensor)</a></b></li>
+<li><a href="https://www.arduitronics.com/article/inertial-measurement-unit-gy-80-module-for-arduino-part-1-adxl345" style="text-decoration:none;color:rgb(51,51,51);font-weight:bold;line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif;font-size:12px">Inertial Measurement Unit - GY-80 Module for Arduino: Part 1 ADXL345</a></li>
+<li><a href="https://www.arduitronics.com/article/inertial-measurement-unit-gy-80-module-for-arduino-part-2-l3g4200d" style="text-decoration:none;color:rgb(51,51,51);font-weight:bold;line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif;font-size:12px">Inertial Measurement Unit - GY-80 Module for Arduino: Part 2 L3G4200D</a></li></ul></ul>
+<ul><li><b><font size="2">โมดูลสื่อสาร</font></b></li>
+<ul><li><a href="https://www.arduitronics.com/article/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-bluetooth-module-hc-05" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">การใช้งาน Bluetooth Module + HC-05</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%90%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-ethernet-shield-%E0%B8%81%E0%B8%B1%E0%B8%9A-arduino-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-1" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">พื้นฐานการใช้งาน Ethernet Shield กับ Arduino (ตอนที่ 1)</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%90%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-ethernet-shield-%E0%B8%81%E0%B8%B1%E0%B8%9A-arduino-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-2" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">พื้นฐานการใช้งาน Ethernet Shield กับ Arduino (ตอนที่ 2)</font></b></a></li>
+<li><b style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><font size="2"><a href="https://www.arduitronics.com/article/arduino-and-online-data-logger-using-enc28j60-ethernet-module" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif">Arduino and Online Data Logger using ENC28J60 Ethernet Module</a></font></b></li>
+<li><b style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><a href="https://www.arduitronics.com/article/introduction-to-arduino-gprs-gsm-module" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-size:12px">Introduction to Arduino GPRS/GSM Module</a></b></li></ul></ul>
+<ul><li><b><font size="2">การใช้งาน Motor และ Relay</font></b></li>
+<ul><li><a href="https://www.arduitronics.com/article/arduino-and-motor-control-part-1" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Arduino and Motor Control : Part 1</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/arduino-and-motor-control-part-2" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Arduino and Motor Control : Part 2</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/arduino-and-motor-control-part-3-stepper-motor" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Arduino and Motor Control : Part 3 (Stepper Motor)</font></b></a></li>
+<li><b style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><font size="2"><a href="https://www.arduitronics.com/article/arduino-and-motor-control-part-4-servo-motor" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif">Arduino and Motor Control : Part 4 (Servo Motor)</a></font></b></li>
+<li><b style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><a href="https://www.arduitronics.com/article/applications-of-relay-with-arduino" style="text-decoration:none;color:rgb(85,85,85);line-height:1.6em;font-size:12px">Applications of Relay with Arduino</a></b></li></ul></ul>
+<ul><li><b><font size="2">การแสดงค่าต่างๆ (แสง สี เสียง จอ)</font></b></li>
+<ul><li><a href="https://www.arduitronics.com/article/arduino-sing-a-song" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Arduino Sing a Song</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/arduino-and-visual-basic-2012" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Arduino and Visual Basic 2012</font></b></a></li>
+<li><b style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><font size="2"><a href="https://www.arduitronics.com/article/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-lcd-%E0%B8%81%E0%B8%B1%E0%B8%9A-arduino" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif">การใช้งาน LCD กับ Arduino</a></font></b></li>
+<li><span style="background-color:transparent;font-size:10pt"><b><font><a href="https://www.arduitronics.com/article/8x8-led-matrix-driver">การใช้งาน LED Matrix 8x8 + Driver MAX7219</a></font></b></span></li>
+<li><span style="background-color:transparent;font-size:10pt"><b>
+<div>
+<div>
+<div></div>
+</div>
+</div>
+<div>
+<div><a href="https://www.arduitronics.com/article/introduction-to-tft-touch-screen-with-arduino-boards">Introduction to TFT + Touch Screen with Arduino Boards</a></div>
+</div>
+</b></span></li>
+<li><span style="background-color:transparent;font-size:10pt"><b>
+<div>
+<div>
+<div></div>
+</div>
+</div>
+<div>
+<div><a href="https://www.arduitronics.com/article/introduction-to-tft-touch-screen-with-arduino-boards-part-ii">Introduction to TFT + Touch Screen with Arduino Boards Part II</a></div>
+</div>
+</b></span></li>
+<li><b><font color="#0000ff"><a href="https://www.arduitronics.com/article/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-i2c-lcd" target="_blank">การใช้งานจอ LCD กับ I2C โมดูล</a></font></b></li>
+<li><b><a href="https://www.arduitronics.com/article/61/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%88%E0%B8%AD%E0%B9%81%E0%B8%AA%E0%B8%94%E0%B8%87%E0%B8%9C%E0%B8%A5%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%B4%E0%B8%81%E0%B9%82%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B8%A2-nokia-5110" target="">การใช้งานจอแสดงผลกราฟิกโนเกีย-nokia-5110</a></b></li></ul></ul>
+<ul><li><b><font size="2">โมดูลเพื่อการบันทึกค่าและส่งค่า</font></b></li>
+<ul><li><a href="https://www.arduitronics.com/article/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-sd-card-module-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-1" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">การต่อใช้งาน SD Card Module (ตอนที่ 1)</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-sd-card-module-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-2" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">การต่อใช้งาน SD Card Module (ตอนที่ 2)</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/arduino-with-keypad-and-4-channel-relay" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Arduino with Keypad and 4 Channel Relay</font></b></a></li></ul></ul>
+<ul><li><b><font size="2">เรื่องของสัญญาณ</font></b></li>
+<ul><li><b style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><font size="2"><a href="https://www.arduitronics.com/article/%E0%B8%A5%E0%B8%94%E0%B8%97%E0%B8%AD%E0%B8%99%E0%B8%AA%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%93%E0%B8%A3%E0%B8%9A%E0%B8%81%E0%B8%A7%E0%B8%99%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%87%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%86" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif">ลดทอนสัญญาณรบกวนแบบง่ายๆ</a></font></b></li></ul>
+<li><font face="Tahoma, Arial, MS Sans Serif, sans-serif"><span style="line-height:21.328125px"><b>เรื่องของ GPS และการประยุกต์ใช้</b></span></font></li>
+<ul><li><font face="Tahoma, Arial, MS Sans Serif, sans-serif"><span style="line-height:21.328125px"><b><a href="https://www.arduitronics.com/article/gps-shield-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-1" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-size:12.222222328186035px">GPS Shield (ตอนที่ 1)</a></b></span></font></li>
+<li><font face="Tahoma, Arial, MS Sans Serif, sans-serif"><span style="line-height:21.328125px"><a href="http://www.gjdigital.com/article/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-gps-shield-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-2" style="text-decoration:none;color:rgb(51,51,51);font-weight:bold;line-height:1.6em;font-size:12px">การใช้งาน GPS Shield (ตอนที่ 2)</a></span></font></li></ul></ul>
+<ul><li><b><font size="2">เรื่องทั่วไปเกี่ยวกับ Arduino</font></b></li>
+<ul><li><a href="https://www.arduitronics.com/article/arduinos-boards-buying-guide" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Arduino's Boards Buying Guide</font></b></a></li></ul></ul>
+<ul><li><b><font size="2">อื่นๆ</font></b></li>
+<ul><li><a href="https://www.arduitronics.com/article/%E0%B8%A1%E0%B8%B2%E0%B8%94%E0%B8%B9%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%81%E0%B9%88%E0%B8%AD%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%9E%E0%B8%B9%E0%B8%94%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87-arduino-%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%94%E0%B8%B5%E0%B8%81%E0%B8%A7%E0%B9%88%E0%B8%B2" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">มาดูผู้ก่อตั้งพูดเรื่องของ Arduino กันดีกว่า</font></b></a></li>
+<li><a href="https://www.arduitronics.com/article/steve-job-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%81%E0%B9%88%E0%B8%AD%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87-apple-inc" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><b><font size="2">Steve Job และการก่อตั้ง Apple Inc</font></b></a></li>
+<li><b style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif"><font size="2"><a href="https://www.arduitronics.com/article/frizting" style="text-decoration:none;color:rgb(51,51,51);line-height:1.6em;font-family:Tahoma,Arial,MS Sans Serif,sans-serif">Frizting</a>&nbsp;</font></b></li></ul></ul>
+<font color="#333333" face="Tahoma, Arial, MS Sans Serif, sans-serif" size="2"><span style="line-height:21.333332061767578px"><b>
+<div><img src="/site/sites/system/app/images/cleardot.gif" data-type="plusone" data-props="align:left;showCount:true;size:standard;" class="sites-placeholder-plusone-standard-count" style="display:block;text-align:left;margin-right:auto;"></div>
+<br>
+</b></span></font>
+<div style="margin:5px 10px;display:inline;float:right">&nbsp;
+</div>
+</div>
+</div>
+</div>
+<div style="margin:5px 10px;display:inline;float:right"><br>
+</div></div><div class="unitShoe"></div></div></div></div>
+<div id="gadget-10" config_id="10" class="widgetZone z-aside  z-aside-left"><div class="zoneShirt">
+<div id="gadget-108" config_id="108" class="widgetUnit u-lnwshopoftheday"><div class="unitHat"></div><div class="unitShirt"><div style="text-align: center;">
+<a href="https://www.lnwshop.com/shop/check_lnwshopoftheday/8/4/62" rel="noopener" target="_blank"><img src="https://l.lnwpic.com/p19wsm.png" alt="lnwshop of the day badge" width="220" border="0" /></a>
+<a href="https://www.lnwshop.com/shop/check_lnwshopoftheday/8/4/62" rel="noopener" target="_blank" style="font-size:18px;font-family:'RSU';color:#666666;">ประจำวันที่ 8 เมษายน 2562</a>
+</div></div><div class="unitShoe"></div></div>
+
+<div id="gadget-11" config_id="11" class="widgetUnit u-search"><div class="unitHat"></div><div class="unitShirt"><div class="titleHeader"><h3 class="headerText">SEARCH</h3><div class="headerImage"></div></div><div class="top-search"></div><div class="middle-search"><form action="https://www.arduitronics.com/search"><div class="text-container" id="searchProductForm" ><input aria-labelledby="searchProductForm" type="text" name="q" class="textbox" autocomplete="off" placeholder="Search"/></div><div class="button-container"><ul class="submit BUTTON" btype="submit" ><li class="buttonLeft"></li><li class="buttonCenter buttonText">ค้นหา</li><li class="buttonRight"></li><li><input class="buttonSubmit" type="submit" value="" /></li></ul></div></form><div class="adv-text"><a href="https://www.arduitronics.com/search">ค้นหาขั้นสูง</a></div><div class="search-popup"><table cellpadding="0" cellspacing="0" class="searchframebg"><tbody><tr class="top"><td class="left"></td><td class="center"></td><td class="right"></td></tr><tr class="middle"><td class="left"><div class="pointer"></div></td><td class="center"><ul class="result"></ul></td><td class="right"></td></tr><tr class="bottom"><td class="left"></td><td class="center"><a href="" class="seemore">ดูทั้งหมด</a></td><td class="right"></td></tr></tbody></table></div></div><div class="bottom-search"></div></div><div class="unitShoe"></div></div>
+<div id="gadget-106" config_id="106" class="widgetUnit u-html"><div class="unitHat"></div><div class="unitShirt"><center>
+<img height="130" border="0" src="https://qr-official.line.me/L/XfY_aUVH2O.png">
+
+
+<a href="https://line.me/R/ti/p/%40rfm0967y"><img height="40" border="0" alt="เพิ่มเพื่อน" src="https://scdn.line-apps.com/n/line_add_friends/btn/en.png"></a>
+
+</center></div><div class="unitShoe"></div></div>
+
+<div id="gadget-12" config_id="12" class="widgetUnit u-category"><div class="unitHat"></div><div class="unitShirt"><div class="titleHeader"><h3 class="headerText">CATEGORY</h3><div class="headerImage"></div></div><div class="top-cat"></div><div class="middle-cat"><div class="content">
+<div class="main-cat other-cat">
+	<div class="cat-item pro-all"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category"><span class="name">สินค้าทั้งหมด</span> <span class="count">[2199]</span></a></div><div class="bottom"></div><div class="line"></div></div>
+	<div class="cat-item pro-hot"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/showroom/hot"><span class="name">สินค้าขายดี</span> <span class="count">[54]</span></a></div><div class="bottom"></div><div class="line"></div></div>
+	<div class="cat-item pro-new"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/showroom/new"><span class="name">สินค้ามาใหม่</span> <span class="count">[192]</span></a></div><div class="bottom"></div><div class="line"></div></div>
+	<div class="cat-item pro-recommend"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/showroom/recommend"><span class="name">สินค้าแนะนำ</span> <span class="count">[128]</span></a></div><div class="bottom"></div><div class="line"></div></div>
+	<div class="cat-item pro-sale"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/showroom/sale"><span class="name">สินค้าลดราคา</span> <span class="count">[54]</span></a></div><div class="bottom"></div><div class="line"></div></div>
+	<div class="cat-item pro-comingsoon"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/showroom/comingsoon"><span class="name">สินค้าที่กำลังจะมา</span> <span class="count">[11]</span></a></div><div class="bottom"></div><div class="line"></div></div>
+	<div class="cat-item pro-soldout"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/showroom/soldout"><span class="name">สินค้าที่หมดแล้ว</span> <span class="count">[307]</span></a></div><div class="bottom"></div><div class="line"></div></div>
+	<div class="cat-item pro-discontinued"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/showroom/discontinued"><span class="name">สินค้าที่เลิกขายแล้ว</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div>
+</div>
+<div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/75/clearance-ลดกระหน่ำ"><span class="name">Clearance ลดกระหน่ำ</span> <span class="count">[16]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/111/education-stem"><span class="name">Education / STEM</span> <span class="count">[5]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/53/หนังสือ-books"><span class="name">หนังสือ (Books)</span> <span class="count">[22]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/194/หนังสือ-books/microbit-2"><span class="name">Micro:bit</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/107/หนังสือ-books/raspberry-pi-2"><span class="name">Raspberry Pi</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/108/หนังสือ-books/arduino"><span class="name">Arduino</span> <span class="count">[6]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/109/หนังสือ-books/electronics-circuits"><span class="name">Electronics & Circuits</span> <span class="count">[6]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/121/หนังสือ-books/programming"><span class="name">Programming</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/178/หนังสือ-books/robots-kinect-wearable"><span class="name">Robots/Kinect/Wearable</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/67/internet-of-things-iot"><span class="name">Internet of Things (IoT)</span> <span class="count">[94]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/190/internet-of-things-iot/smart-home-farm"><span class="name">Smart Home / Farm</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/184/internet-of-things-iot/mega-uno-wifi"><span class="name">Mega / UNO WiFi</span> <span class="count">[6]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/182/internet-of-things-iot/lora-lorawifi"><span class="name">LoRa / LoRa+WiFi</span> <span class="count">[12]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/100/internet-of-things-iot/wifi-nodemcu-esp8266"><span class="name">WiFi NodeMCU ESP8266</span> <span class="count">[8]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/172/internet-of-things-iot/wifi-nodemcu-esp32s"><span class="name">WiFi NodeMCU ESP32S</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/101/internet-of-things-iot/wifi-esp8266-2"><span class="name">WiFi ESP8266</span> <span class="count">[28]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/176/internet-of-things-iot/wifi-esp8285"><span class="name">WiFi ESP8285</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/102/internet-of-things-iot/wifi-esp32-wifi-ble"><span class="name">WiFi ESP32 (WiFi + BLE)</span> <span class="count">[12]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/106/internet-of-things-iot/wifi-wemos"><span class="name">WiFi WeMos</span> <span class="count">[13]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/104/internet-of-things-iot/wifi-linkit-2"><span class="name">WiFi LinkIt</span> <span class="count">[7]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/105/internet-of-things-iot/wifi-cc3000-2"><span class="name">WiFi CC3000</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/12/robot-cnc-flight-printer"><span class="name">Robot/CNC/Flight/Printer</span> <span class="count">[66]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/162/robot-cnc-flight-printer/smart-car-วัสดุ-abs"><span class="name">Smart Car / วัสดุ ABS</span> <span class="count">[21]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/163/robot-cnc-flight-printer/gear-encoder-wheel"><span class="name">Gear/Encoder/Wheel</span> <span class="count">[16]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/164/robot-cnc-flight-printer/cnc-shield"><span class="name">CNC Shield</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/165/robot-cnc-flight-printer/robot-arm-joint"><span class="name">Robot Arm / Joint</span> <span class="count">[11]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/166/robot-cnc-flight-printer/thermal-3d-printer-filament-2"><span class="name">Thermal / 3D Printer / Filament</span> <span class="count">[9]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/167/robot-cnc-flight-printer/drone-flight-uav"><span class="name">Drone / Flight / UAV</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/192/robot-cnc-flight-printer/เครื่องหยอดเหรียญ"><span class="name">เครื่องหยอดเหรียญ</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/72/other-development-boards"><span class="name">Other Development Boards</span> <span class="count">[75]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/87/other-development-boards/plc"><span class="name">PLC</span> <span class="count">[11]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/201/other-development-boards/nvidia-jetson-2"><span class="name">NVIDIA Jetson</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/193/other-development-boards/microbit"><span class="name">Micro:bit</span> <span class="count">[16]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/146/other-development-boards/pic-programmer"><span class="name">PIC + Programmer</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/54/other-development-boards/fpga-programmer"><span class="name">FPGA + Programmer</span> <span class="count">[7]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/81/other-development-boards/bluetooth-dev-boards"><span class="name">Bluetooth Dev Boards</span> <span class="count">[9]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/199/other-development-boards/cytron-maker-uno"><span class="name">Cytron Maker UNO</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/147/other-development-boards/flight-controller"><span class="name">Flight Controller</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/84/other-development-boards/sparkfun"><span class="name">SparkFun</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/186/other-development-boards/dfrobot"><span class="name">DFRobot</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/46/other-development-boards/beaglebone"><span class="name">Beaglebone</span> <span class="count">[5]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/173/other-development-boards/teensy"><span class="name">Teensy</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/68/other-development-boards/cubieboard"><span class="name">Cubieboard</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/62/other-development-boards/orange-pi-banana-pi"><span class="name">Orange Pi / Banana Pi</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/80/other-development-boards/nano-pi"><span class="name">Nano Pi</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/82/other-development-boards/psoc-5lp"><span class="name">PSoC 5LP</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/57/other-development-boards/stm32"><span class="name">STM32</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/4/raspberry-pi"><span class="name">Raspberry Pi</span> <span class="count">[168]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/61/raspberry-pi/raspberry-pi-boards"><span class="name">Raspberry Pi Boards</span> <span class="count">[13]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/94/raspberry-pi/expansion-board-gpio"><span class="name">Expansion Board / GPIO</span> <span class="count">[17]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/79/raspberry-pi/shield-sensor-shield-hat"><span class="name">Shield/Sensor Shield/HAT</span> <span class="count">[9]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/47/raspberry-pi/rpi-special-set-kit"><span class="name">RPi Special Set / Kit</span> <span class="count">[12]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/71/raspberry-pi/motor-motor-drive"><span class="name">Motor / Motor Drive</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/51/raspberry-pi/camera-vision-2"><span class="name">Camera / Vision</span> <span class="count">[19]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/59/raspberry-pi/case-enclosure"><span class="name">Case / Enclosure</span> <span class="count">[32]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/70/raspberry-pi/display-display-adapter-2"><span class="name">Display/Display Adapter</span> <span class="count">[18]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/31/raspberry-pi/power-supply-adapter"><span class="name">Power Supply / Adapter</span> <span class="count">[6]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/76/raspberry-pi/gps-gps-shield"><span class="name">GPS / GPS Shield</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/83/raspberry-pi/micro-sd-sd-card"><span class="name">micro SD / SD Card</span> <span class="count">[6]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/85/raspberry-pi/power-battery"><span class="name">Power / Battery</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/92/raspberry-pi/keyboard-joystick"><span class="name">Keyboard / Joystick</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/195/raspberry-pi/voice-music-mic"><span class="name">Voice / Music / Mic</span> <span class="count">[6]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/202/raspberry-pi/usb-hdmi-adapter"><span class="name">USB / HDMI Adapter</span> <span class="count">[9]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/203/raspberry-pi/logic-level-converter"><span class="name">Logic Level Converter</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/204/raspberry-pi/pin-header"><span class="name">Pin Header</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/26/arduino-official-products"><span class="name">Arduino Official Products</span> <span class="count">[20]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/2/arduino-compatible-board"><span class="name">Arduino Compatible Board</span> <span class="count">[31]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/23/arduino-learning-kits"><span class="name">Arduino Learning Kits</span> <span class="count">[33]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/10/arduino-shields"><span class="name">Arduino Shields</span> <span class="count">[33]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/44/ic-chip"><span class="name">IC / Chip</span> <span class="count">[68]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/77/ic-chip/resistor-ตัวต้านทาน"><span class="name">Resistor (ตัวต้านทาน)</span> <span class="count">[14]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/153/ic-chip/capacitor-ตัวเก็บประจุ"><span class="name">Capacitor (ตัวเก็บประจุ)</span> <span class="count">[13]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/156/ic-chip/ic-arduino-controller"><span class="name">IC Arduino/Controller</span> <span class="count">[5]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/158/ic-chip/ic-regulator"><span class="name">IC Regulator</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/159/ic-chip/ic-sensor"><span class="name">IC Sensor</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/157/ic-chip/ic-adc-dac-2"><span class="name">IC ADC/DAC</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/154/ic-chip/ic-general-transistor"><span class="name">IC General Transistor</span> <span class="count">[13]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/155/ic-chip/ic-oscillator-timing"><span class="name">IC Oscillator / Timing</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/160/ic-chip/ic-io-expander-driver"><span class="name">IC IO / Expander / Driver</span> <span class="count">[6]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/174/ic-chip/ic-socket"><span class="name">IC Socket</span> <span class="count">[7]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/13/lcd-led-oled-laser-2"><span class="name">LCD/LED/OLED/Laser</span> <span class="count">[163]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/140/lcd-led-oled-laser-2/led-led-drive"><span class="name">LED / LED Drive</span> <span class="count">[89]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/138/lcd-led-oled-laser-2/lcd-lcd-drive"><span class="name">LCD / LCD Drive</span> <span class="count">[30]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/139/lcd-led-oled-laser-2/lcd-tft"><span class="name">LCD TFT</span> <span class="count">[16]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/141/lcd-led-oled-laser-2/oled"><span class="name">OLED</span> <span class="count">[10]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/142/lcd-led-oled-laser-2/laser"><span class="name">Laser</span> <span class="count">[18]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/132/led-7-segment"><span class="name">LED 7 Segment</span> <span class="count">[14]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/137/led-7-segment/โมดูล-7-segment-อเนกประสงค์"><span class="name">โมดูล 7 Segment อเนกประสงค์</span> <span class="count">[5]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/133/led-7-segment/7-segment-1-หลัก"><span class="name">7 Segment 1 หลัก</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/134/led-7-segment/7-segment-2-หลัก"><span class="name">7 Segment 2 หลัก</span> <span class="count">[0]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/135/led-7-segment/7-segment-3-หลัก"><span class="name">7 Segment 3 หลัก</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/136/led-7-segment/7-segment-4-หลัก"><span class="name">7 Segment 4 หลัก</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/143/motor-motor-drive-2"><span class="name">Motor / Motor Drive</span> <span class="count">[105]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/15/motor-motor-drive-2/motor"><span class="name">Motor</span> <span class="count">[49]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/34/motor-motor-drive-2/motor-drive-shield"><span class="name">Motor Drive / Shield</span> <span class="count">[48]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/187/motor-motor-drive-2/motor-with-fan-ใบพัด"><span class="name">Motor with Fan / ใบพัด</span> <span class="count">[5]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/188/motor-motor-drive-2/vibration-motor"><span class="name">Vibration Motor</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/32/power-supply-battery"><span class="name">Power Supply / Battery</span> <span class="count">[117]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/69/power-supply-battery/switching-power-supply"><span class="name">Switching Power Supply</span> <span class="count">[19]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/151/power-supply-battery/dc-power-adapter-module"><span class="name">DC Power Adapter Module</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/145/power-supply-battery/power-adapter"><span class="name">Power Adapter</span> <span class="count">[17]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/144/power-supply-battery/battery-ถ่าน-charger-แท่นชาร์ต"><span class="name">Battery (ถ่าน) / Charger (แท่นชาร์ต)</span> <span class="count">[27]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/148/power-supply-battery/battery-charger-module"><span class="name">Battery Charger Module</span> <span class="count">[14]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/86/power-supply-battery/เรกูเลเตอร์-step-up"><span class="name">เรกูเลเตอร์ Step-Up</span> <span class="count">[10]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/150/power-supply-battery/เรกูเลเตอร์-step-down"><span class="name">เรกูเลเตอร์ Step-Down</span> <span class="count">[28]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/168/power-supply-battery/เรกูเลเตอร์-step-up-down"><span class="name">เรกูเลเตอร์ Step-Up/Down</span> <span class="count">[0]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/161/power-supply-battery/พาวเวอร์แบงค์-power-bank"><span class="name">พาวเวอร์แบงค์ Power Bank</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/11/sensors-modules"><span class="name">Sensors / Modules</span> <span class="count">[760]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/6/sensors-modules/วัดความเร่ง-ไจโร-imu"><span class="name">วัดความเร่ง/ไจโร/IMU</span> <span class="count">[28]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/7/sensors-modules/lidar-เซ็นเซอร์วัดระยะทาง-ความเร็ว-distance-speed"><span class="name">LIDAR / เซ็นเซอร์วัดระยะทาง / ความเร็ว Distance / Speed</span> <span class="count">[53]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/185/sensors-modules/โมดูลตรวจจับเส้นขาวดำ-infrared-line-tracking"><span class="name">โมดูลตรวจจับเส้นขาวดำ Infrared Line Tracking</span> <span class="count">[11]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/169/sensors-modules/โมดูลสวิทช์-ชน-แตะ-หยุด-mechanical-limit-switch"><span class="name">โมดูลสวิทช์ ชน/แตะ หยุด Mechanical Limit Switch</span> <span class="count">[5]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/8/sensors-modules/โมดูลวัดสี-กล้องและการมองเห็น-camera-color-vision"><span class="name">โมดูลวัดสี กล้องและการมองเห็น Camera / Color / Vision</span> <span class="count">[19]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/171/sensors-modules/ตรวจวัดสเปกตรัมจากแสงสะท้อน-spectrum-spectroscopy"><span class="name">ตรวจวัดสเปกตรัมจากแสงสะท้อน Spectrum / Spectroscopy</span> <span class="count">[11]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/16/sensors-modules/ตรวจวัดแรงกด-และ-วัดน้ำหนัก-force-weight-sensor"><span class="name">ตรวจวัดแรงกด และ วัดน้ำหนัก Force / Weight Sensor</span> <span class="count">[42]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/170/sensors-modules/วัดการเคลื่อนไหวและการสั่น-motion-vibration-sensor-2"><span class="name">วัดการเคลื่อนไหวและการสั่น Motion/Vibration Sensor</span> <span class="count">[28]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/175/sensors-modules/ตรวจจับท่าทางการขยับของมือ-gesture-sensor-module"><span class="name">ตรวจจับท่าทางการขยับของมือ Gesture Sensor Module</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/91/sensors-modules/โมดูลเซ็นเซอร์ทางชีวภาพ-biometrics-sensor"><span class="name">โมดูลเซ็นเซอร์ทางชีวภาพ Biometrics Sensor</span> <span class="count">[25]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/18/sensors-modules/โมดูลวัดแรงดันและกระแสไฟฟ้า-voltage-current-sensor"><span class="name">โมดูลวัดแรงดันและกระแสไฟฟ้า Voltage/Current Sensor</span> <span class="count">[47]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/17/sensors-modules/วัดสภาพแวดล้อมและแก๊ส-environmental-gas"><span class="name">วัดสภาพแวดล้อมและแก๊ส Environmental / Gas</span> <span class="count">[146]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/198/sensors-modules/เซ็นเซอร์ตรวจจับโลหะ-metal-inductive-sensor"><span class="name">เซ็นเซอร์ตรวจจับโลหะ / Metal Inductive Sensor</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/97/sensors-modules/potentiometer-rotary-encoder"><span class="name">Potentiometer/Rotary Encoder</span> <span class="count">[13]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/96/sensors-modules/thermoelectric-sensor"><span class="name">Thermoelectric Sensor</span> <span class="count">[9]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/90/sensors-modules/joystick-keypad"><span class="name">Joystick / Keypad</span> <span class="count">[27]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/20/sensors-modules/โมดูลสื่อสาร-มีสายและไร้สาย-wire-wireless-comm"><span class="name">โมดูลสื่อสาร (มีสายและไร้สาย) Wire- / Wireless Comm.</span> <span class="count">[93]</span></a><div class="sub-cat"><table cellpadding="0" cellspacing="0" class="subframebg"><tbody><tr class="top"><td class="left"></td><td class="center"></td><td class="right"></td></tr><tr class="middle"><td class="left"><div class="pointer"></div></td><td class="center"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/112/sensors-modules/โมดูลสื่อสาร-มีสายและไร้สาย-wire-wireless-comm/bluetooth-bt"><span class="name">Bluetooth (BT)</span> <span class="count">[22]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/113/sensors-modules/โมดูลสื่อสาร-มีสายและไร้สาย-wire-wireless-comm/xbee"><span class="name">Xbee</span> <span class="count">[22]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/114/sensors-modules/โมดูลสื่อสาร-มีสายและไร้สาย-wire-wireless-comm/rf"><span class="name">RF</span> <span class="count">[27]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/115/sensors-modules/โมดูลสื่อสาร-มีสายและไร้สาย-wire-wireless-comm/2g-3g-4g"><span class="name">2G/3G/4G</span> <span class="count">[5]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/116/sensors-modules/โมดูลสื่อสาร-มีสายและไร้สาย-wire-wireless-comm/wifi"><span class="name">WiFi</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/117/sensors-modules/โมดูลสื่อสาร-มีสายและไร้สาย-wire-wireless-comm/bluetooth-xbee"><span class="name">Bluetooth-Xbee</span> <span class="count">[0]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/119/sensors-modules/โมดูลสื่อสาร-มีสายและไร้สาย-wire-wireless-comm/ethernet"><span class="name">Ethernet</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/118/sensors-modules/โมดูลสื่อสาร-มีสายและไร้สาย-wire-wireless-comm/infrared-ir"><span class="name">Infrared (IR)</span> <span class="count">[9]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/120/sensors-modules/โมดูลสื่อสาร-มีสายและไร้สาย-wire-wireless-comm/power-line-communications"><span class="name">Power Line Communications</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div></td><td class="right"></td></tr><tr class="bottom"><td class="left"></td><td class="center"></td><td class="right"></td></tr></tbody></table></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/28/sensors-modules/clock-and-timing"><span class="name">Clock and Timing</span> <span class="count">[6]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/40/sensors-modules/audio-sound-mp3-voice"><span class="name">Audio/Sound/MP3/Voice</span> <span class="count">[50]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/88/sensors-modules/adc-dac-module"><span class="name">ADC / DAC Module</span> <span class="count">[5]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/41/sensors-modules/converter-adapter-mux"><span class="name">Converter/Adapter/MUX</span> <span class="count">[19]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/42/sensors-modules/gps-antenna"><span class="name">GPS / Antenna</span> <span class="count">[25]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/45/sensors-modules/nfc-rfid-magneticcard"><span class="name">NFC/RFID/MagneticCard</span> <span class="count">[23]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/149/sensors-modules/signal-generator"><span class="name">Signal Generator</span> <span class="count">[6]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/93/sensors-modules/magnet-magnetic-switch-2"><span class="name">Magnet/Magnetic Switch</span> <span class="count">[11]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/58/sensors-modules/leap-motion-kinect"><span class="name">Leap Motion / Kinect</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/60/sensors-modules/i-o-expansion-module"><span class="name">I/O Expansion Module</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/56/sensors-modules/solar-cell"><span class="name">Solar Cell</span> <span class="count">[11]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/78/sensors-modules/solenoid-valve-pump"><span class="name">Solenoid Valve / Pump</span> <span class="count">[16]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/89/sensors-modules/memory-sd-card-adapter"><span class="name">Memory/SD Card Adapter</span> <span class="count">[13]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/110/sensors-modules/can-bus-lin-bus-obd"><span class="name">CAN Bus / LIN Bus / OBD</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/197/sensors-modules/โมดูลขยายขา-io"><span class="name">โมดูลขยายขา IO</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/19/relay"><span class="name">Relay</span> <span class="count">[101]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/179/relay/หัวรีเลย์-relay-head"><span class="name">หัวรีเลย์ Relay Head</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/128/relay/wifi-relay"><span class="name">WiFi Relay</span> <span class="count">[3]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/129/relay/bluetooth-relay"><span class="name">Bluetooth Relay</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/122/relay/1-channel-relay"><span class="name">1 Channel Relay</span> <span class="count">[31]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/123/relay/2-channel-relay"><span class="name">2 Channel Relay</span> <span class="count">[12]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/181/relay/3-channel-relay"><span class="name">3 Channel Relay</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/124/relay/4-channel-relay"><span class="name">4 Channel Relay</span> <span class="count">[12]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/125/relay/6-channel-relay"><span class="name">6 Channel Relay</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/126/relay/8-channel-relay"><span class="name">8 Channel Relay</span> <span class="count">[14]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/127/relay/16-channel-relay"><span class="name">16 Channel Relay</span> <span class="count">[7]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/130/relay/solid-state-relay-ssr"><span class="name">Solid State Relay (SSR)</span> <span class="count">[11]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/131/relay/multi-functional-relay"><span class="name">Multi-functional Relay</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/21/accessories-components-2"><span class="name">Accessories/Components</span> <span class="count">[245]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/22/accessories-components-2/cable-wire-connector"><span class="name">Cable/Wire/Connector</span> <span class="count">[64]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/73/accessories-components-2/pin-header-pin-nut-น๊อต"><span class="name">Pin Header/Pin/Nut น๊อต</span> <span class="count">[33]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/196/accessories-components-2/screw-terminal-screw-connector"><span class="name">Screw Terminal / Screw Connector</span> <span class="count">[2]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/27/accessories-components-2/breadboard"><span class="name">Breadboard</span> <span class="count">[9]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/63/accessories-components-2/switches-buttons"><span class="name">Switches / Buttons</span> <span class="count">[40]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/191/accessories-components-2/heat-sink"><span class="name">Heat Sink</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/183/accessories-components-2/rf-antenna-connector"><span class="name">RF Antenna / Connector</span> <span class="count">[5]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/29/accessories-components-2/usb-converter"><span class="name">USB Converter</span> <span class="count">[25]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/36/accessories-components-2/case-box-enclosure"><span class="name">Case & Box & Enclosure</span> <span class="count">[8]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/38/accessories-components-2/programmer"><span class="name">Programmer</span> <span class="count">[14]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/49/accessories-components-2/network-wifi-router"><span class="name">Network / Wifi Router</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/64/accessories-components-2/adapter-hdmi-vgi-dvi-2"><span class="name">Adapter HDMI/VGI/DVI</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/66/accessories-components-2/รางถ่าน-ขั้วถ่าน-jack"><span class="name">รางถ่าน/ขั้วถ่าน/Jack</span> <span class="count">[30]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/152/accessories-components-2/usb-hub"><span class="name">USB Hub</span> <span class="count">[4]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/180/accessories-components-2/ฟิวส์-fuse"><span class="name">ฟิวส์ (Fuse)</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/200/accessories-components-2/กล่องใส่อุปกรณ์-อเนกประสงค์"><span class="name">กล่องใส่อุปกรณ์ อเนกประสงค์</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/33/scope-meter-network-tester"><span class="name">Scope/Meter/Network Tester</span> <span class="count">[14]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/50/อุปกรณ์บัดกรีและแผ่น-pcb"><span class="name">อุปกรณ์บัดกรีและแผ่น PCB</span> <span class="count">[43]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/98/consumer-electronics"><span class="name">Consumer Electronics</span> <span class="count">[6]</span></a><div class="main-cat"><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/74/consumer-electronics/vr-glasses-camera"><span class="name">VR Glasses / Camera</span> <span class="count">[5]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/48/consumer-electronics/smart-wearable-gadgets"><span class="name">Smart Wearable Gadgets</span> <span class="count">[0]</span></a></div><div class="bottom"></div><div class="line"></div></div><div class="cat-item"><div class="top"></div><div class="middle"><a href="https://www.arduitronics.com/category/99/consumer-electronics/dvd-player"><span class="name">DVD Player</span> <span class="count">[1]</span></a></div><div class="bottom"></div><div class="line"></div></div></div></div><div class="bottom"></div><div class="line"></div></div></div><div class="cat_more"><a href="https://www.arduitronics.com/category">ดูหมวดหมู่ทั้งหมด</a></div>
+</div></div><div class="bottom-cat"></div></div><div class="unitShoe"></div></div>
+<div id="gadget-62" config_id="62" class="widgetUnit u-facebook/likebox"><div class="unitHat"></div><div class="unitShirt"><div style="text-align:center;"><div class="fb-page" data-href="http://www.facebook.com/arduitronics" data-width="220" data-height="290" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-tabs="timeline"><blockquote cite="http://www.facebook.com/arduitronics" class="fb-xfbml-parse-ignore"><a href="http://www.facebook.com/arduitronics">http://www.facebook.com/arduitronics</a></blockquote></div></div></div><div class="unitShoe"></div></div>
+<div id="gadget-16" config_id="16" class="widgetUnit u-contact"><div class="unitHat"></div><div class="unitShirt"><div class="titleHeader"><h3 class="headerText">CONTACT US</h3><div class="headerImage"></div></div><div class="top-contact"></div>
+<div class="middle-contact">
+<div class="tel">มือถือ0887823467 แฟกซ์02-0153201</div>
+<div class="email">arduinoengineer@gmail.com</div>
+<div class="social-area"><a class="social-item facebook" title="facebook.com/arduitronics" href="https://www.facebook.com/arduitronics" target="_blank"><span class="social-icon"></span><span class="social-text">facebook.com/arduitronics</span></a><a class="social-item line" title="www.arduitronics.com" href="https://line.me/ti/p/~www.arduitronics.com" target="_blank"><span class="social-icon"></span><span class="social-text">www.arduitronics.com</span></a></div>
+</div>
+<div class="bottom-contact"></div></div><div class="unitShoe"></div></div>
+<div id="gadget-84" config_id="84" class="widgetUnit u-showroom/sale layout-main u-showroom"><div class="unitHat"></div><div class="unitShirt">	<div class="titleHeader"><h3 class="headerText">SALE</h3><div class="headerImage"></div></div>	<div class="productsArea thumbnailArea size-150 frame-001">
+	<div class="productArea">
+		<div class="productItem" proid="876">
+			<div class="gadgetThumbnail" title="Banana Pi Pro Acrylic Case">
+				<a href="https://www.arduitronics.com/product/876/banana-pi-pro-acrylic-case">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/yy/49/qj.jpg" alt="Banana Pi Pro Acrylic Case" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon sale"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">SKU-00876</span></div>				<div class="product_name" title="Banana Pi Pro Acrylic Case"><a href="https://www.arduitronics.com/product/876/banana-pi-pro-acrylic-case">Banana Pi Pro Acrylic Case</a></div>
+													<div class="product_price has_currency_unit" realprice="150">150.00 บาท</div>
+											<div class="product_price_old has_currency_unit" realprice="300">300.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="896">
+			<div class="gadgetThumbnail" title="3D VR Glasses (Black Hard Case)">
+				<a href="https://www.arduitronics.com/product/896/3d-vr-glasses-black-hard-case">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/oo/4t/46.jpg" alt="3D VR Glasses (Black Hard Case)" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon sale"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">VR00003</span></div>				<div class="product_name" title="3D VR Glasses (Black Hard Case)"><a href="https://www.arduitronics.com/product/896/3d-vr-glasses-black-hard-case">3D VR Glasses (Black Hard Case)</a></div>
+													<div class="product_price has_currency_unit" realprice="550">550.00 บาท</div>
+											<div class="product_price_old has_currency_unit" realprice="950">950.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="400">
+			<div class="gadgetThumbnail" title="BBB Case - Enclosure for Beagle Bone Black (By Adafruit)">
+				<a href="https://www.arduitronics.com/product/400/bbb-case-enclosure-for-beagle-bone-black-by-adafruit">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/bx/2j/yp.jpg" alt="BBB Case - Enclosure for Beagle Bone Black (By Adafruit)" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon sale"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">BB00002</span></div>				<div class="product_name" title="BBB Case - Enclosure for Beagle Bone Black (By Adafruit)"><a href="https://www.arduitronics.com/product/400/bbb-case-enclosure-for-beagle-bone-black-by-adafruit">BBB Case - Enclosure for Beagle Bone Black (By Adafruit)</a></div>
+													<div class="product_price has_currency_unit" realprice="400">400.00 บาท</div>
+											<div class="product_price_old has_currency_unit" realprice="670">670.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="669">
+			<div class="gadgetThumbnail" title="Enclosure for Raspberry Pi Model A+ (Adafruit)">
+				<a href="https://www.arduitronics.com/product/669/enclosure-for-raspberry-pi-model-a-adafruit">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/jn/1p/g9.jpg" alt="Enclosure for Raspberry Pi Model A+ (Adafruit)" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon sale"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">AS00075</span></div>				<div class="product_name" title="Enclosure for Raspberry Pi Model A+ (Adafruit)"><a href="https://www.arduitronics.com/product/669/enclosure-for-raspberry-pi-model-a-adafruit">Enclosure for Raspberry Pi Model A+ (Adafruit)</a></div>
+													<div class="product_price has_currency_unit" realprice="420">420.00 บาท</div>
+											<div class="product_price_old has_currency_unit" realprice="700">700.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		</div>
+</div><div class="unitShoe"></div></div>
+<div id="gadget-13" config_id="13" class="widgetUnit u-showroom/new layout-main u-showroom"><div class="unitHat"></div><div class="unitShirt">	<div class="titleHeader"><h3 class="headerText">NEW PRODUCTS</h3><div class="headerImage"></div></div>	<div class="productsArea thumbnailArea size-150 frame-001">
+	<div class="productArea">
+		<div class="productItem" proid="90">
+			<div class="gadgetThumbnail" title="Big Breadboard SYB-500">
+				<a href="https://www.arduitronics.com/product/90/big-breadboard-syb-500-2">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/v6/w5/a3.jpg" alt="Big Breadboard SYB-500" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon new"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">AG00025</span></div>				<div class="product_name" title="Big Breadboard SYB-500"><a href="https://www.arduitronics.com/product/90/big-breadboard-syb-500-2">Big Breadboard SYB-500</a></div>
+													<div class="product_price has_currency_unit" realprice="200">200.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="1762">
+			<div class="gadgetThumbnail" title="XH-W1401 Digital Temperature Controller with NTC Sensor (พร้อมแผงแสดงผลแบบ 7 Segment LED)">
+				<a href="https://www.arduitronics.com/product/1762/xh-w1401-digital-temperature-controller-with-ntc-sensor-พร้อมแผงแสดงผลแบบ-7-segment-led">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/24/64/kg.jpg" alt="XH-W1401 Digital Temperature Controller with NTC Sensor (พร้อมแผงแสดงผลแบบ 7 Segment LED)" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon new"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">AG10188</span></div>				<div class="product_name" title="XH-W1401 Digital Temperature Controller with NTC Sensor (พร้อมแผงแสดงผลแบบ 7 Segment LED)"><a href="https://www.arduitronics.com/product/1762/xh-w1401-digital-temperature-controller-with-ntc-sensor-พร้อมแผงแสดงผลแบบ-7-segment-led">XH-W1401 Digital Temperature Controller with NTC Sensor (พร้อมแผงแสดงผลแบบ 7 Segment LED)</a></div>
+													<div class="product_price has_currency_unit" realprice="170">170.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="2674">
+			<div class="gadgetThumbnail" title="PZEM-004T AC Digital Power Energy Meter Module with Open/Close Current Transformer แบบมีกรอบใสอย่างดี">
+				<a href="https://www.arduitronics.com/product/2674/pzem-004t-ac-digital-power-energy-meter-module-with-open-close-current-transformer-แบบมีกรอบใสอย่างด">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/ay/92/h0.jpg" alt="PZEM-004T AC Digital Power Energy Meter Module with Open/Close Current Transformer แบบมีกรอบใสอย่างดี" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon new"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">SG30298</span></div>				<div class="product_name" title="PZEM-004T AC Digital Power Energy Meter Module with Open/Close Current Transformer แบบมีกรอบใสอย่างดี"><a href="https://www.arduitronics.com/product/2674/pzem-004t-ac-digital-power-energy-meter-module-with-open-close-current-transformer-แบบมีกรอบใสอย่างด">PZEM-004T AC Digital Power Energy Meter Module with Open/Close Current Transformer แบบมีกรอบใสอย่างดี</a></div>
+													<div class="product_price has_currency_unit" realprice="350">350.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="2673">
+			<div class="gadgetThumbnail" title="PZEM-004T AC Digital Power Energy Meter Module แบบมีกรอบใสอย่างดี">
+				<a href="https://www.arduitronics.com/product/2673/pzem-004t-ac-digital-power-energy-meter-module-แบบมีกรอบใสอย่างดี">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/iz/eb/p3.jpg" alt="PZEM-004T AC Digital Power Energy Meter Module แบบมีกรอบใสอย่างดี" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon new"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">SG20298</span></div>				<div class="product_name" title="PZEM-004T AC Digital Power Energy Meter Module แบบมีกรอบใสอย่างดี"><a href="https://www.arduitronics.com/product/2673/pzem-004t-ac-digital-power-energy-meter-module-แบบมีกรอบใสอย่างดี">PZEM-004T AC Digital Power Energy Meter Module แบบมีกรอบใสอย่างดี</a></div>
+													<div class="product_price has_currency_unit" realprice="315">315.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="2669">
+			<div class="gadgetThumbnail" title="ESP32 LoLin D32 Pro 16MB Dev. Board WiFi + Bluetooth (free pin header)">
+				<a href="https://www.arduitronics.com/product/2669/esp32-lolin-d32-pro-16mb-dev-board-wifi-bluetooth-free-pin-header">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/bk/tn/kq.jpg" alt="ESP32 LoLin D32 Pro 16MB Dev. Board WiFi + Bluetooth (free pin header)" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon new"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">BA00082</span></div>				<div class="product_name" title="ESP32 LoLin D32 Pro 16MB Dev. Board WiFi + Bluetooth (free pin header)"><a href="https://www.arduitronics.com/product/2669/esp32-lolin-d32-pro-16mb-dev-board-wifi-bluetooth-free-pin-header">ESP32 LoLin D32 Pro 16MB Dev. Board WiFi + Bluetooth (free pin header)</a></div>
+													<div class="product_price has_currency_unit" realprice="460">460.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="2672">
+			<div class="gadgetThumbnail" title="WAV+WMA+MP3 Decoder Board Kit 12V (บอร์ดถอดรหัส WAV + WMA + MP3 การ์ดหน่วยความจำขนาดเล็ก)">
+				<a href="https://www.arduitronics.com/product/2672/wavwmamp3-decoder-board-kit-12v-บอร์ดถอดรหัส-wav-wma-mp3-การ์ดหน่วยความจำขนาดเล็ก">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/ex/cm/e9.jpg" alt="WAV+WMA+MP3 Decoder Board Kit 12V (บอร์ดถอดรหัส WAV + WMA + MP3 การ์ดหน่วยความจำขนาดเล็ก)" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon new"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">AS00294</span></div>				<div class="product_name" title="WAV+WMA+MP3 Decoder Board Kit 12V (บอร์ดถอดรหัส WAV + WMA + MP3 การ์ดหน่วยความจำขนาดเล็ก)"><a href="https://www.arduitronics.com/product/2672/wavwmamp3-decoder-board-kit-12v-บอร์ดถอดรหัส-wav-wma-mp3-การ์ดหน่วยความจำขนาดเล็ก">WAV+WMA+MP3 Decoder Board Kit 12V (บอร์ดถอดรหัส WAV + WMA + MP3 การ์ดหน่วยความจำขนาดเล็ก)</a></div>
+													<div class="product_price has_currency_unit" realprice="195">195.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="2671">
+			<div class="gadgetThumbnail" title="ESP32 V1 Rev1 wifi Bluetooth 4MB FLASH Lite Wireless Bluetooth">
+				<a href="https://www.arduitronics.com/product/2671/esp32-v1-rev1-wifi-bluetooth-4mb-flash-lite-wireless-bluetooth">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/j9/d8/wf.jpg" alt="ESP32 V1 Rev1 wifi Bluetooth 4MB FLASH Lite Wireless Bluetooth" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon new"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">BA00084</span></div>				<div class="product_name" title="ESP32 V1 Rev1 wifi Bluetooth 4MB FLASH Lite Wireless Bluetooth"><a href="https://www.arduitronics.com/product/2671/esp32-v1-rev1-wifi-bluetooth-4mb-flash-lite-wireless-bluetooth">ESP32 V1 Rev1 wifi Bluetooth 4MB FLASH Lite Wireless Bluetooth</a></div>
+													<div class="product_price has_currency_unit" realprice="265">265.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="2670">
+			<div class="gadgetThumbnail" title="ESP32-CAM WiFi + Bluetooth Camera Module Development Board ESP32 With Camera Module OV2640">
+				<a href="https://www.arduitronics.com/product/2670/esp32-cam-wifi-bluetooth-camera-module-development-board-esp32-with-camera-module-ov2640">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/30/sq/vq.jpg" alt="ESP32-CAM WiFi + Bluetooth Camera Module Development Board ESP32 With Camera Module OV2640" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon new"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">BA00083</span></div>				<div class="product_name" title="ESP32-CAM WiFi + Bluetooth Camera Module Development Board ESP32 With Camera Module OV2640"><a href="https://www.arduitronics.com/product/2670/esp32-cam-wifi-bluetooth-camera-module-development-board-esp32-with-camera-module-ov2640">ESP32-CAM WiFi + Bluetooth Camera Module Development Board ESP32 With Camera Module OV2640</a></div>
+													<div class="product_price has_currency_unit" realprice="350">350.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="2668">
+			<div class="gadgetThumbnail" title="Handheld RFID Writer (Read / Write) 125KHz เครื่องเขียน/ อ่าน RFID แถม Tag 1 ชิ้น">
+				<a href="https://www.arduitronics.com/product/2668/handheld-rfid-writer-read-write-125khz-เครื่องเขียน-อ่าน-rfid-แถม-tag-1-ชิ้น">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/tr/94/y8.jpg" alt="Handheld RFID Writer (Read / Write) 125KHz เครื่องเขียน/ อ่าน RFID แถม Tag 1 ชิ้น" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon new"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">SG00378</span></div>				<div class="product_name" title="Handheld RFID Writer (Read / Write) 125KHz เครื่องเขียน/ อ่าน RFID แถม Tag 1 ชิ้น"><a href="https://www.arduitronics.com/product/2668/handheld-rfid-writer-read-write-125khz-เครื่องเขียน-อ่าน-rfid-แถม-tag-1-ชิ้น">Handheld RFID Writer (Read / Write) 125KHz เครื่องเขียน/ อ่าน RFID แถม Tag 1 ชิ้น</a></div>
+													<div class="product_price has_currency_unit" realprice="215">215.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		<div class="productArea">
+		<div class="productItem" proid="2667">
+			<div class="gadgetThumbnail" title="3.7V 4800mAh 17.76Wh Lithium Battery Rechargeable Polymer (LiPo) ถ่านชาร์จ Li-ion 3.7V ความจุ 4800mAh 17.76Wh">
+				<a href="https://www.arduitronics.com/product/2667/3-7v-4800mah-17-76wh-lithium-battery-rechargeable-polymer-lipo-ถ่านชาร์จ-li-ion-3-7v-ความจุ-4800mah-">
+				<img class="productImage lazyimg" data-src="https://o.lnwfile.com/_/o/_fit/150/150/b3/kk/ti.jpg" alt="3.7V 4800mAh 17.76Wh Lithium Battery Rechargeable Polymer (LiPo) ถ่านชาร์จ Li-ion 3.7V ความจุ 4800mAh 17.76Wh" />
+					<div class="gadgetFrame"></div>
+					<div class="gadgetRibbon new"></div>
+				</a>
+			</div>
+			<div class="productDetail">
+				<div class="product_code">รหัสสินค้า <span class="code">AG00386</span></div>				<div class="product_name" title="3.7V 4800mAh 17.76Wh Lithium Battery Rechargeable Polymer (LiPo) ถ่านชาร์จ Li-ion 3.7V ความจุ 4800mAh 17.76Wh"><a href="https://www.arduitronics.com/product/2667/3-7v-4800mah-17-76wh-lithium-battery-rechargeable-polymer-lipo-ถ่านชาร์จ-li-ion-3-7v-ความจุ-4800mah-">3.7V 4800mAh 17.76Wh Lithium Battery Rechargeable Polymer (LiPo) ถ่านชาร์จ Li-ion 3.7V ความจุ 4800mAh 17.76Wh</a></div>
+													<div class="product_price has_currency_unit" realprice="200">200.00 บาท</div>
+													<div class="product_button"><ul class="b-order BUTTON" btype="button" onclick="__lnw__.add2cart(this);"><li class="buttonLeft"></li><li class="buttonCenter buttonText">สั่งซื้อ</li><li class="buttonRight"></li></ul></div>			</div>
+		</div>
+	</div>
+		</div>
+<div class="products_seeAll">
+<a href="https://www.arduitronics.com/showroom/new" class="seeAll"><span class="text">ดูสินค้ามาใหม่ทั้งหมด</span></a></div>
+</div><div class="unitShoe"></div></div>
+<div id="gadget-105" config_id="105" class="widgetUnit u-html"><div class="unitHat"></div><div class="unitShirt"></div><div class="unitShoe"></div></div>
+<div id="gadget-99" config_id="99" class="widgetUnit u-join/button"><div class="unitHat"></div><div class="unitShirt"><div class="titleHeader"><h3 class="headerText">เข้าร่วมร้านค้า</h3><div class="headerImage"></div></div><div class="top-join"></div>
+<div class="middle-join">
+	<div class="shop_profile">
+		<img src="https://o.lnwfile.com/_/o/_resize/50/50/nm/yk/xg.jpg" width="40" class="shop_avatar" alt="ร้านArduitronics" title="ร้านArduitronics">
+		<div class="shop_detail">
+			<div class="shop_name">ร้านArduitronics</div>
+			<div class="shop_url">/www.arduitronics.com/</div>
+		</div>
+	</div>
+
+	<div class="joinButton"><a class="join_shop_button gray" onclick="return __lnw__.joinShop.toggle();"><div class="join_num">652</div></a></div>
+	<div class="joinDesc">สมัครสมาชิกร้านนี้ เพื่อรับสิทธิพิเศษ</div>
+ </div>
+<div class="bottom-join"></div></div><div class="unitShoe"></div></div>
+<div id="gadget-15" config_id="15" class="widgetUnit u-stat"><div class="unitHat"></div><div class="unitShirt"><div class="titleHeader"><h3 class="headerText">STATISTICS</h3><div class="headerImage"></div></div><table class="statTable"><tbody><tr class="pageviewsTR"><td class="headTD">หน้าที่เข้าชม</td><td class="bodyTD">8,182,047 ครั้ง</td></tr><tr class="visitsTR"><td class="headTD">ผู้ชมทั้งหมด</td><td class="bodyTD">2,614,940 ครั้ง</td></tr><tr class="open_dateTR"><td class="headTD">เปิดร้าน</td><td class="bodyTD">21 พ.ค. 2556</td></tr><tr class="updated_dateTR"><td class="headTD">ร้านค้าอัพเดท</td><td class="bodyTD">11 มิ.ย. 2562</td></tr></tbody></table></div><div class="unitShoe"></div></div>
+<div id="gadget-17" config_id="17" class="widgetUnit u-track"><div class="unitHat"></div><div class="unitShirt"><div class="titleHeader"><h3 class="headerText">TRACK&TRACE</h3><div class="headerImage"></div></div><div class="trackBox defaultlang">
+<a href="http://track.thailandpost.co.th/trackinternet/Default.aspx" target="_blank" class="link">ตรวจสอบพัสดุ</a>
+</div></div><div class="unitShoe"></div></div>
+<div id="gadget-14" config_id="14" class="widgetUnit u-member"><div class="unitHat"></div><div class="unitShirt"><div class="titleHeader"><h3 class="headerText">MEMBER</h3><div class="headerImage"></div></div><div class="lnwlogin-zone">
+	<div class="lnwaccount-part">
+		<span class="text">เข้าสู่ระบบด้วย </span><span class="logo"><img src="https://www.arduitronics.com/system/application/modules/lnwshop/_images/lnwaccount_90px.png" width="90" alt="lnwaccount logo"></span>
+		<a href="https://lnwaccounts.com/3/login?lnw_service=lnwshop&request_token_data=8b7bee5e3d1d34519403.tL4iudmgdC2BM3nhNAjFcHczt71kuIhsVSAILihJVNzhcA-M1Np1pPUxAfRPZ3KPNBuMtAh8vPDCoRRshg-rseTJsUFQa1P-cT=Ai18gCKKRawB_q9ue6sel_Z=vEGkY7VSQY_sICTH3grbFGCgESkyDpWTJjcZz99jubekZWzHXHAx2cJCt3BKiabNI1hEK8hTgrj0-cRqO5GhfO9dkae_eZE9kS_JcC8p7BQOZTjU=ADkLpRTHW_fPerdVJ_NJZ-OmQc9xF8Ke8GWThK77QzHP4JtjHUeEFMDq_gu_K18VHvfZLTVTSUjspOZatHJbKjTAVeMdP5qjSTJWoOeKWDRZXNM5L3G9KkB-slD5EHAffKjxa5tvBa9qHlGW15m=S=R6JLI8BMiGCkCE77RbQQoHKMjfNITOCPScee52V_WPG22QjVXjhbGiOPNdhRtBO80uRGLymlKDtu8hGPE7RMod67bsdBbD.3ff280491a1ec86b128c" rel="nofollow"><div class="b-gotologin">เข้าสู่ระบบ</div></a>
+	</div>
+		<div class="register-part">
+		<span class="text">สมัครสมาชิก </span><span class="logo"><img src="https://www.arduitronics.com/system/application/modules/lnwshop/_images/lnwaccount_90px.png" width="90" alt="lnwaccount logo"></span><br/><br/>
+		<span class="subtext">ยังไม่มีบัญชีเทพ <span>สร้างบัญชีใหม่</span> ไม่เกิน 5 นาที</span>
+		<a href="https://lnwaccounts.com/register?lnw_service=lnwshop&request_token_data=1f49870ec5833f96cc27.tL4iudmgdC2BM3nhNAjFcHczt71puIhsVSAILihJDNzhcA-M1Np1phUxAfkPZ3KPNBJMtfh_vPDCoRR9hgNrgeTJsUFQa1PKcM=Aix8yCKKRhwB_q9qe6sel_Z=vEGkmSVSdY_sICTH3grbFaCgESkyDpWTJjcZz99jubekZCzHXHAx2cJCt3QKiabNK1hEK8hNgrjh-tRqO5GhfL9dLav_eZE9kSvJcC8v7BQOZTjJiADkLpRYFW_fMbrdVJ_NSM-Omf-9xF8KeuqWThKf7QzHP4rZjHUelFMDq_gu8K18VwvfZLTVTSUjspOZatHJbKVTAVe_dPaqjSTVWoOeKWDRZXNMaL3G9KkB-slD55HAff5jxa5tvB89qHlGW15m=S=R6JLI8BMiGCkCE77RbQQoHKMjfNITOCPScee52V_WPG22QjVXjhbGiOPNdhRtBO8zuROLymlK=tu8hGPi7RMod67bsdBbC.20e9956099889958aa6f" rel="nofollow"><div class="b-gotoregister">สมัครสมาชิก (ฟรี)</div></a>
+	</div>
+</div>
+</div><div class="unitShoe"></div></div>
+</div></div>
+</div>
+<div id="gadget-19" config_id="19" class="widgetZone z-footer"><div class="zoneShirt">
+<div class="menu" align="center"><a href="https://www.arduitronics.com/" class="pname_main" title="หน้าแรก">หน้าแรก</a><span> | </span><a href="https://www.arduitronics.com/how2order" class="pname_how2order" title="วิธีการสั่งซื้อสินค้า">วิธีการสั่งซื้อสินค้า</a><span> | </span><a href="https://www.arduitronics.com/informpayment" class="pname_informpayment" title="แจ้งชำระเงิน">แจ้งชำระเงิน</a><span> | </span><a href="https://www.arduitronics.com/article" class="pname_article" title="บทความ">บทความ</a><span> | </span><a href="https://www.arduitronics.com/webboard" class="pname_webboard" title="เว็บบอร์ด">เว็บบอร์ด</a><span> | </span><a href="https://www.arduitronics.com/aboutus" class="pname_aboutus" title="เกี่ยวกับเรา">เกี่ยวกับเรา</a><span> | </span><a href="https://www.arduitronics.com/contactus" class="pname_contactus" title="ติดต่อเรา">ติดต่อเรา</a><span> | </span><a href="https://www.arduitronics.com/cart" class="pname_cart" title="ตะกร้าสินค้า">ตะกร้าสินค้า</a><span> | </span><a href="https://www.arduitronics.com/sitemap" class="pname_sitemap" title="Site Map">Site Map</a></div>
+<div class="lnw_footer_area">
+<div class="lnw_ssl_badge_cover">
+<div id="trustLogo"></div>
+<script language="JavaScript" type="text/javascript">
+	$(document).ready(function(){
+		var load_ssl_badge = function(){
+			var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
+			$.getScript( tlJsHost+"trustlogo/javascript/trustlogo.js", function( data, textStatus, jqxhr ) {
+				var tmp_doc_write = document.write;
+				var tmp_doc_writeln = document.writeln;
+				var $e = $('#trustLogo');
+				document.write = function(){
+					var args = Array.prototype.slice.call(arguments, 0);
+					var txt = args.join(' ');
+					$e.append(txt);
+				}
+				document.writeln = function(){
+					var args = Array.prototype.slice.call(arguments, 0);
+					var txt = args.join(' ');
+					$e.append('\n'+txt);
+				}
+							TrustLogo("https://www.arduitronics.com/system/application/modules/lnwshop/_images/ssl/comodo-secure.png", "CL1", "none");
+							document.write = tmp_doc_write;
+				document.writeln = tmp_doc_writeln;
+			});
+		};
+		setTimeout(load_ssl_badge,2000);
+	});
+</script>
+</div>
+</div>
+<div class="info-text mceContentBody gadgetHTML">
+	</div>
+<div class="copyright" align="center">
+				<div class="copyrightText"><span>Copyright &copy; 2019 </span>
+			<a href="https://www.arduitronics.com/">www.arduitronics.com</a>
+				<span>All rights reserved.</span></div>
+						<div class="footerText">		<a href="https://www.lnwshop.com/" title="ร้านค้าออนไลน์" target="_blank" rel="noopener">ร้านค้าออนไลน์</a>
+			&nbsp; Inspired by &nbsp;
+			<a href="https://www.lnwshop.com/" title="ร้านค้าออนไลน์" target="_blank" rel="noopener">LnwShop.com</a>
+		</div>	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18903793-17']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript">
+	var _lnws = 'so.lnwstat.com';
+	var _lnwp = '91991';
+	var _lnwd = 'www.arduitronics.com';
+	var _lnwm = 'article';
+	var _lnwk = '35';
+
+	document.write('<script type="text/javascript" src="https://' + _lnws + '/lnwstat.js"><\/script>');
+</script>
+</div>
+<!-- datetime[2019-06-11 18:03:43] -->
+
+</div></div>
+<div id="gadget-20" config_id="20" class="widgetUnit u-cart"><div class="unitHat"></div><div class="unitShirt"><div class="product" textstyle="text"><a href="https://www.arduitronics.com/cart" onclick="return __lnw__.openCartMini();"><div class="cart_text">สินค้าในตะกร้า</div><div class="cart_info"><span class="cart_num">0</span>  <span class="kind_text">ชนิด</span> <span class="cart_quantity">0</span> <span class="quantity_text">ชิ้น</span></div></a></div>
+
+
+<script type="text/javascript">
+	function showInfoSocial( html) {
+		$('.quickInfo .shopInfoSocialHide').show().html(html);
+	}
+</script></div><div class="unitShoe"></div></div>
+<div id="lnw-gototop" class="" onclick="lnw_gototop();"><span class="text"></span></div></div></div></div><script language="JavaScript" type="text/javascript" src="https://www.arduitronics.com/external/vue.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://www.arduitronics.com/system/application/modules/lnwshop/_js/many.min.js?t=20190401000000"></script>
+<script language="JavaScript" type="text/javascript" src="https://www.arduitronics.com/external/tinymce/tinymce.min.js?t=20180220"></script>
+<script language="JavaScript" type="text/javascript">
+var LNWACCOUNTS_COOKIE_DATA = 'ASgAZgUiB2JZZVpuA2xeKAUiBWAEbwc9UmNTP1V9B19XcV09Xm0CDlVtBGcAcwQ8AnlaOA4-WW1WalZhDitVKgN1UTAGNlc5BzNdNgUgUV0BIwBiBScHdllpWm4DbF4MBWkFZwQhB25SJFNkVW8HN1diXT1ebQJkVT0ENgBhBGACbVpjDmtZbVYwVmkOa1U-A2BRawZqVzUHYF1gBW1RNgFjADQFYgcxWWJaIwMuXnEFYQVgBGAHO1JzUz9VfQdfV29dPF4tAmtVNAQvAHMEWQIuWnEOa1k1VidWNQ5tVVkDI1E6BjdXNQd0XWIFOlF3ATwAawV4BydZdFpoA29eNgVyBSEEOQdlUjNTZ1U5BzJXM11pXj8CY1U3BC8AcwRjAiNadQ59WTVWcVZqDmdVcwM7UT8GJw==';
+</script><script language="JavaScript" type="text/javascript">var LNWFILE_JSONP = 'lnwfile_jsonp';
+function file_upload_url () {return "https://o-up.lnwfile.com/lnwshop/upload/";}
+function file_upload_flash_url () {return "https://o-up.lnwfile.com/lnwshop/upload_flash/";}
+function file_upload_icon_url () {return "https://o-up.lnwfile.com/lnwshop/upload_icon/";}
+function file_upload_document_url () {return "https://o-up.lnwfile.com/lnwshop/upload_document/";}
+function file_upload_manage_url () {return "https://o-up.lnwfile.com/lnwshop/upload_manage/";}
+function file_flash_url () {return "https://o-up.lnwfile.com/swf/swfupload.swf";}
+function file_uploadify_url () {return "https://o-up.lnwfile.com/swf/uploadify.swf";}
+function file_jsonp_url (uri) {return "https://o-up.lnwfile.com/lnwshop/jsonp/"+(uri===undefined?"":uri)+"?"+LNWFILE_JSONP+"=?";}
+function base_url (uri) {return "https://www.arduitronics.com/"+(uri===undefined?"":uri);}
+function site_url (uri) {return "https://www.arduitronics.com/"+(uri===undefined?"":uri);}
+var css_files = ['https://www.arduitronics.com/system/application/templates/lnwshop/default/_css/basic.min.css?t=20190607020547','https://www.arduitronics.com/cache/lnwshop/91/991/css/20190604155542/style.css'];
+function css_url () {return css_files.join(',');}
+var WEBID = 91991;
+var WEBDATA = {};
+WEBDATA.id = 91991;
+WEBDATA.webname = 'arduitronics';
+WEBDATA.name = 'Arduitronics';
+WEBDATA.image = 'https://o.lnwfile.com/nmykxg.jpg';
+WEBDATA.avatar = function(w,h){
+	return img_src(this.image,'shop',w,h);
+}
+WEBDATA.share_url = 'https://www.arduitronics.com/article/35';
+WEBDATA.join_num = 652;
+var lnw_project = 'lnwshop';
+var lowerIE8 = false;
+var mobileSiteEnabled = true;
+	function _add_settings_data(settings, name, value) {
+		if(typeof settings.data == 'undefined' || settings.data == null || settings.data == '') {
+			settings.data = name + '=' + value;
+		} else if(typeof settings.data=='string') {
+			settings.data += '&' + name + '=' + value;
+		} else if($.isArray(settings.data)) {
+			settings.data.push({name: name, value: value});
+		} else if(typeof FormData !== 'undefined') {
+			settings.data.append(name, value);
+		}
+	}
+	$(document).ready(function() {
+		//if(window.top.location.href != window.location.href)
+			//window.top.location.href = window.location.href;
+		if(window.top != window)
+			$('body').html("<h1 style='margin: 200px;'><a href='" + window.location.href + "' target='_top'>Click here to enter</a></h1>");
+
+		$.ajaxSetup({
+			dataType: "html",
+			cache: false
+		});
+		$(this).ajaxSend(function(e, xhr, settings) {
+			if(!settings.data){
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			}
+			_add_settings_data(settings, 'ajaxxxx', true);
+			_add_settings_data(settings, 'ajaxxxx_dataType', settings.dataType);
+		});
+	});
+
+var __lnwconfig = {"slideshow":{"is_enabled":0},"gointer":{"is_enabled":0},"verify_badge":{"level":0,"show":true},"business_badge":2}
+</script>
+<script language="JavaScript" type="text/javascript" src="https://www.arduitronics.com/system/application/modules/lnwshop/_js/lang_th.js?t=20161208000000"></script>
+
+<script language="JavaScript" type="text/javascript" src="https://www.arduitronics.com/system/application/modules/lnwshop/_js/default.min.js?t=20190607020607"></script>
+
+
+
+    
+    <div class="btn-chat-container">
+        <div class="btn btn-chat">
+            <div class="close-icon" onclick="goto_chat();"></div>
+            <div class="icon"></div>
+            <div class="text">พูดคุย-สอบถาม คลิก</div>
+        </div>
+        <ul class="social-button">
+                                                    <li class="btn btn-email"><a href="https://www.arduitronics.com/contactus" onclick="return lead_contactus_track();">
+                        <div class="icon"></div>
+                        <div class="text">ฝากข้อความ</div>
+                    </a></li>
+                                        <li class="btn btn-mobile"><a href="tel:มือถือ0887823467 แฟกซ์02-0153201" onclick="return lead_phone_track();">
+                        <div class="icon"></div>
+                        <div class="text">โทร</div>
+                    </a></li>
+                                                    <li class="btn btn-line"><a href="https://line.me/ti/p/~www.arduitronics.com" target="_blank" onclick="return lead_line_track();">
+                        <div class="icon"></div>
+                        <div class="text">Add Line</div>
+                    </a></li>
+                                        <li class="btn btn-facebook"><a target="_blank" href="https://www.messenger.com/t/arduitronics" onclick="return lead_facebook_track();">
+                        <div class="icon"></div>
+                        <div class="text">Facebook Messenger</div>
+                    </a></li>
+                    </ul>
+    </div>
+
+    <script language="JavaScript">
+                function lead_contactus_track() {
+                    return true;
+        }
+                function lead_phone_track() {
+                    return true;
+        }
+                function lead_facebook_track() {
+                    return true;
+        }
+                function lead_twitter_track() {
+                    return true;
+        }
+                function lead_instagram_track() {
+                    return true;
+        }
+                function lead_line_track() {
+                    return true;
+        }
+            </script>
+
+<script type="text/javascript">		var first_sync_accounts_time = true;
+		function accounts_update__hook_after_check_account() {
+			if(first_sync_accounts_time){
+								first_sync_accounts_time = false;
+			}
+		} var accountsTime = null;
+function accounts_update() {
+	var data = {
+		data: 'cbf23086c014f78d60c5.Xt8Mjt8_jf4HdxBnHsL8OL0jDyi_x_5WtNZrxBIsZTqG_NMdOo2tojefrUHlWV2B_VCSfMb7M-e-dFXqDWE8rJCxRu7b_KpM7SACiUvZc8KVNA6aCTa-NOU4MbBDtjdvRiBbnnOOd3h1cez=MzPcOOwtSbnl7r1I8ITEcx9sbNWHfpgLI8KYnCTIAhmWPeZU9hwMNDHdNOKSKykcjB6NS8CTtZ9N9bDbCzqVXGOJDwpnVoPZf9OfMrOh-coNtfGH-OiYtzujqQLxVaIu.032dceb4285f95a50657',
+		revision_id: 1662
+	};
+	$.getJSON("https://static.lnwaccounts.com/jsonp/heartbeat?lnwaccounts_jsonp=?", data, function(response) {
+		if(response.success) {
+			$.cookie('_lnwacct_91991_www_arduitronics_com___tk', response._lnwacct, {path: '/'});
+			if(response.state_change != undefined && response.state_change) {
+				//alert('reload');
+				window.location.href = window.location.href;
+                /*
+				if(typeof window.console.log == 'function') {
+					window.console.log('reload');
+				}
+                /**/
+				return;
+			}
+			if(typeof accounts_update__hook_after_check_account == 'function') {
+				accounts_update__hook_after_check_account();
+			}
+		}
+		if(accountsTime != null) {
+			clearTimeout(accountsTime);
+		}
+		accountsTime = setTimeout("accounts_update();", 15 * 60 * 1000);
+	});
+	$.ajax({
+		type: 'GET',
+		data: {},
+		url: 'https://www.arduitronics.com/lnwbar/action/session'
+	});
+}
+$(document).ready(function() {
+	accounts_update();
+});
+
+	var USERDATA = {};
+	USERDATA.name = '0';
+	USERDATA.is_login = 0;
+	USERDATA.avatar = 'https://www.arduitronics.com/images/noAvatar.png';
+	USERDATA.is_join = 0;
+	USERDATA.is_dealer = 0;
+	USERDATA.cart_quantity = 0;
+	var LNWACCOUNTS_LOGIN_URL = 'https://lnwaccounts.com/3/login?lnw_service=lnwshop&request_token_data=411f01e7e56667da369c.tL4iudmgdC2BM3nhNAjFcHczt71CuIhsVSAILihJUNzhcA-M1Np1piUxAfRPZ3KPNBuMtehtvPDCoRR4hg9r4eTJsUFQa1Pwcm=Ail8vCKKRkwB_q9Ae6sel_Z=vEGko7VSxY_sICTH3grbFGCgESkyDpWTJjcZz99jubekZKzHXHAx2cJCt3WKiabNU1hEK8hLgrjl-MRqO5GhfL9dgaC_eZE9kSbJcC8uqBQOZTj9aADkLpRUEW_fMbrdVJ_NUp-Omdd9xF8KeuiWThKq7QzHP4ikjHUepFMDq_guJP18VYvfZLTVTSUjspKZatHJbKzTAVeudPeqjSThWoOeKWDRZXNMkL3G9KkB-slD50HAffIjxa5tvBp9qHlGW15m=S=R6JLI8BMiGCkCE77RbQQoHKMjfNITOCPScee52V_WPG22QjVXjhbGiOPNdhRtBO8juRSLymlKCtu8hGPU7RMod67bsdBb8.8b44a53d15f017948280';
+	var LNWACCOUNTS_REGISTER_URL = 'https://lnwaccounts.com/register?lnw_service=lnwshop&request_token_data=22a66e13affa8f611662.tL4iudmgdC2BM3nhNAjFcHczt71guIhsVSAILihJINzhcA-M1Np1pyUxAfaPZ3KPNBEMtvhMvPDCoRRVhgRrbeTJsUFQa1P=c7=Ail8iCKKRdwB_q9ne6sel_Z=vEGkmSVS9Y_sICTH3grbFKCgESkyDpWTJjcZz99jubekZWzHXHAx2cJCt3dKiabND1hEK8hSgrjS-QRqO5GhfN9dsa3_eZE9kSnJcC8UqBQOZTjBuADkLpRT7W_fQfrdVJ_NLZ-Omwe9xF8KevCWThK77QzHP4vnjHUeRFMDq_gu_P18VgvfZLTVTSUjspSZatHJbKWTAVeAdPEqjSTEWoOeKWDRZXNMgL3G9KkB-slD5GHAffojxa5tvBs9qHlGW15m=S=R6JLI8BMiGCkCE77RbQQoHKMjfNITOCPScee52V_WPG22QjVXjhbGiOPNdhRtBO8nuRFLymlK0tu8hGPo7RMod67bsdBbA.dad8c10df59f13c82454';
+</script><script language="JavaScript" type="text/javascript" src="https://www.arduitronics.com/system/application/modules/lnwshop/lnwbar/_js/blank_script.min.js?t=20190607020613"></script>
+<script type="text/javascript">$(document).ready(function(){});</script><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTT25BP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	</body>
+</html>
